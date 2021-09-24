@@ -1,0 +1,14 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const projectSchema = new Schema({
+  projectname: { type: String, required: true },
+  projectowner: [{ type: String, required: true }],
+  projectlink: { type: String, trim: true },
+  creationdate: { type: Date, default: Date.now },
+  deadline: { type: Date, required: true },
+});
+
+const Project = mongoose.model("project", projectSchema);
+
+module.exports = Project;
