@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import "./style.css";
+// import "./style.css";
+
 import {
   Nav,
   Navbar,
@@ -13,7 +14,7 @@ import {
 
 function NavbarApp() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+    <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="#home">GitShare 2.0</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
