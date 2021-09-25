@@ -11,7 +11,9 @@ import "./searchcontainer.css";
 import SearchCard from "../searchcard/searchcard";
 import Searchbar from "../Navbar/navbar";
 import API from "../../utils/API";
+
 import projectseed from "../seed/projectData.json";
+
 
 function SearchContainer() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,6 +27,7 @@ function SearchContainer() {
         setData(data);
       });
   }, []);
+
 
   const setData = ({ name, github_repo, description, role_needed }) => {
     setName(name);
