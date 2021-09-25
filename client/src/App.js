@@ -1,8 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar/navbar";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./pages/Search";
-
+import { BrowserRouter as Router } from "react-router-dom";
+import Projectview from "./components/ProjectCard/projectcard";
 
 function App() {
   return (
@@ -12,10 +11,7 @@ function App() {
           <Navbar />
           {/* add seed components */}
           {/* <Seed /> */}
-          <Search />
-          <Switch>
-            <Route exact path="/" component={Search} />
-          </Switch>
+          <Projectview />
         </div>
       </Router>
     </div>
