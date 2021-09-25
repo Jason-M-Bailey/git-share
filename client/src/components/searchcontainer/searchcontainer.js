@@ -8,11 +8,11 @@ import React, {
   setRole,
 } from "react";
 import "./searchcontainer.css";
-import SearchCard from "../searchcard/searchcard";
+import SearchCard from "../Searchcard/searchcard";
 import Searchbar from "../Navbar/navbar";
 import API from "../../utils/API";
 
-import projectseed from "../seed/projectData.json";
+import projectseed from "../../seed/projectData.json";
 
 
 function SearchContainer() {
