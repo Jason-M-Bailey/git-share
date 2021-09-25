@@ -30,7 +30,7 @@ const userSeed = [
   },
 ];
 
-const projectSeed = [
+const projects = [
   {
     name: "NBA Player Search",
     github_repo: "https://github.com/Jason-M-Bailey/nbaplayersearch",
@@ -73,7 +73,7 @@ db.User.remove({})
   });
 
 db.Project.remove({})
-  .then(() => db.Project.collection.insertMany(projectSeed))
+  .then(() => db.Project.collection.insertMany(projects))
   .then((data) => {
     console.log(data.result.n + " records inserted");
     process.exit(0);
