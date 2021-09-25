@@ -6,7 +6,7 @@ import API from "../../utils/API";
 
 // getting error: Can't resolve '../seed/projectData.json'
 // check if path is correct
-import { projectseed } from "../seed/projectData.json";
+import { projectseed } from "../../../../seed/projectData.json";
 
 function SearchContainer() {
   const [searchTerm, setSearchTerm] = useState("");
