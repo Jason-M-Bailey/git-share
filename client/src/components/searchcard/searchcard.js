@@ -1,7 +1,12 @@
 import React from "react";
 import "./searchcard.css";
+import projects from "../seed/projectData.json";
+import { Card } from "react-bootstrap";
 
 function SearchCard(props) {
+
+
+
   return (
     <div>
       <div class="ui link cards">

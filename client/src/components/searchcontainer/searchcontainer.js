@@ -1,12 +1,19 @@
-import React, { useState, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  setName,
+  setRepo,
+  setDescription,
+  setRole,
+} from "react";
 import "./searchcontainer.css";
 import SearchCard from "../searchcard/searchcard";
-import Searchbar from "../navbar/navbar";
+import Searchbar from "../Navbar/navbar";
 import API from "../../utils/API";
 
-// getting error: Can't resolve '../seed/projectData.json'
-// check if path is correct
-import { projectseed } from "../../../../seed/projectData.json";
+import projectseed from "../seed/projectData.json";
+
 
 function SearchContainer() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,10 +28,9 @@ function SearchContainer() {
       });
   }, []);
 
-  // seed data has naming convention as github_repo
+
   const setData = ({ name, github_repo, description, role_needed }) => {
     setName(name);
-    // seed data has naming convention as github_repo
     setRepo(github_repo);
     setDescription(description);
     setRole(role_needed);
