@@ -3,6 +3,9 @@ import "./searchcontainer.css";
 import SearchCard from "../searchcard/searchcard";
 import Searchbar from "../navbar/navbar";
 import API from "../../utils/API";
+
+// getting error: Can't resolve '../seed/projectData.json'
+// check if path is correct
 import { projectseed } from "../seed/projectData.json";
 
 function SearchContainer() {
@@ -18,9 +21,11 @@ function SearchContainer() {
       });
   }, []);
 
-  const setData = ({ name, repo, description, role_needed }) => {
+  // seed data has naming convention as github_repo
+  const setData = ({ name, github_repo, description, role_needed }) => {
     setName(name);
-    setRepo(repo);
+    // seed data has naming convention as github_repo
+    setRepo(github_repo);
     setDescription(description);
     setRole(role_needed);
   };
