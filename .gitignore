@@ -3,11 +3,7 @@
 package-lock.json
 
 # dependencies
-<<<<<<< HEAD
 node_modules
-=======
-/node_modules
->>>>>>> de707fbd5275ce6a7e3df8ea8cdd89c8ea54afb7
 /.pnp
 .pnp.js
 
