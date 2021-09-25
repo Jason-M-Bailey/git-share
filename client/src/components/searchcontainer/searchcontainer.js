@@ -1,9 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  setName,
+  setRepo,
+  setDescription,
+  setRole,
+} from "react";
 import "./searchcontainer.css";
 import SearchCard from "../searchcard/searchcard";
-import Searchbar from "../navbar/navbar";
+import Searchbar from "../Navbar/navbar";
 import API from "../../utils/API";
-import { projectseed } from "../seed/projectData.json";
+import projectseed from "../seed/projectData.json";
 
 function SearchContainer() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,9 +26,9 @@ function SearchContainer() {
       });
   }, []);
 
-  const setData = ({ name, repo, description, role_needed }) => {
+  const setData = ({ name, github_repo, description, role_needed }) => {
     setName(name);
-    setRepo(repo);
+    setRepo(github_repo);
     setDescription(description);
     setRole(role_needed);
   };
