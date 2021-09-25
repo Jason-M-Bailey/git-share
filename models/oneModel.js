@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+    id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
@@ -13,6 +14,7 @@ const UserSchema = new Schema({
 });
 
 const ProjectSchema = new Schema({
+    id: { type: String, required: true, unique: true },
     title: { type: String, required: true },
     project_owner: { 
         type: mongoose.Schema.Types.ObjectId,
@@ -30,6 +32,7 @@ const ProjectSchema = new Schema({
 });
 
 const CommentSchema = new Schema({
+    id: { type: String, required: true, unique: true },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
