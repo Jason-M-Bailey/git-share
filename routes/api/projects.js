@@ -9,6 +9,6 @@ router.route("/")
 // Matches with "/api/projects/:1"
 router
     .route("/:id")
-    .get(projectsController.findOne);
+    .get(projectsController.findById);
 
 module.exports = router;

@@ -8,9 +8,9 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(400).json(err));
     },
-    findOne: function (req, res) {
+    findById: function (req, res) {
         db.User
-            .findOne()
+            .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(400).json(err));
     },
