@@ -1,14 +1,7 @@
 const router = require("express").Router();
-const projectsController = require("../controllers/projectsController");
+const apiRoutes = require("./api");
 
-// Matches with "/api/projects"
-router.route("/")
-    .get(projectsController.findAll)
-    .post(projectsController.create);
-
-// Matches with "/api/projects/:1"
-router
-    .route("/:id")
-    .get(projectsController.findOne);
+// API Routes
+router.use("/api", apiRoutes);
 
 module.exports = router;
