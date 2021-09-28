@@ -53,6 +53,8 @@ function NavbarApp(props) {
           </Form>
           <Nav>
             <Nav.Link href="#add_new_project">Add New Project</Nav.Link>
+
+            {/* if logged in display "Account", if not logged in "Login" */}
             <Nav.Link eventKey={2} href="#login">
               Login
             </Nav.Link>
