@@ -12,7 +12,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-function NavbarApp() {
+function NavbarApp(props) {
   return (
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" fixed="top">
       <Container>
@@ -39,12 +39,17 @@ function NavbarApp() {
           {/* todo: remove search button and use onSubmit to search --- or even better, return results as user begins to type */}
           <Form className="d-flex">
             <FormControl
+              name="repos"
+              value={props.repos}
+              onChange={(e) => props.setRepos(e.target.value)}
               type="search"
               placeholder="Search"
               className="mr-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" onClick={props.handleInputSearch}>
+              Search
+            </Button>
           </Form>
           <Nav>
             <Nav.Link href="#add_new_project">Add New Project</Nav.Link>
