@@ -27,7 +27,7 @@ function ProjectCard(props) {
 
         {/* <div class="ui link cards"> */}
 
-        <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+        <Row xs={1} md={2} lg={3} xxl={4} className="g-4">
           {props.projects.map((seed) => {
             return (
               <div classname="card">
