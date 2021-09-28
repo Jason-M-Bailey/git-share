@@ -1,9 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar/navbar";
+
 import ProjectCard from "./components/ProjectCard/projectcard";
 import projectseed from "./seed/projectData.json";
 import React, { useState } from "react";
 import API from "./utils/API";
+
 
 function App() {
   const [projects, setProjects] = useState(projectseed);
@@ -26,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+
       <div>
         <Navbar
           handleInputSearch={handleInputSearch}
@@ -34,6 +37,7 @@ function App() {
         />
         <ProjectCard projects={projects} />
       </div>
+
     </div>
   );
 }
