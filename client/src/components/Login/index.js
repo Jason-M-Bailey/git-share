@@ -18,6 +18,7 @@ export default function Login() {
   return (
     <div className="Login">
       <Form onSubmit={handleSubmit}>
+        <h1>Login</h1>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -39,6 +40,9 @@ export default function Login() {
           Login
         </Button>
       </Form>
+
+      {/* //todo: how to incorporate the auth??? */}
+      <Button href="/auth/github">Login with Github</Button>
     </div>
   );
 }

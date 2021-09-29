@@ -1,15 +1,24 @@
-import "./App.css";
-import Navbar from "./components/Navbar/navbar";
-
-import ProjectCard from "./components/ProjectCard/projectcard";
-import projectseed from "./seed/projectData.json";
 import React, { useState } from "react";
-import API from "./utils/API";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./components/Login";
+
+// styling
+import "./App.css";
+
+// components
+import Navbar from "./components/Navbar/navbar";
 import Home from "./components/Home";
+import Login from "./components/Login";
+import ProjectCard from "./components/ProjectCard/projectcard";
+
+// utils
+import API from "./utils/API";
+
+// seed
+import projectseed from "./seed/projectData.json";
 
 function App() {
+
+  // search github repos
   const [projects, setProjects] = useState(projectseed);
   const [repos, setRepos] = useState("");
   const handleInputSearch = (e) => {
@@ -28,6 +37,8 @@ function App() {
     });
   };
 
+
+  // todo: clean this up so its merely Router, Switch, Route, Link
   return (
     <div className="App">
       <div>

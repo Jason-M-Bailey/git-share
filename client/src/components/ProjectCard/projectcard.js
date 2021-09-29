@@ -1,8 +1,10 @@
-import { Card } from "react-bootstrap";
 import React from "react";
-import { Wrapper } from "./ProjectCard.styles";
 
+// todo: is there a standard way to import these?
+import { Card } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
+
+import { Wrapper } from "./ProjectCard.styles";
 
 function ProjectCard(props) {
   return (
