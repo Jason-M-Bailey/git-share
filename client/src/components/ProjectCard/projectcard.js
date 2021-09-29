@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-
 function ProjectCard(props) {
   return (
     <section id="projects" className="text-gray-400 bg-gray-900 body-font">
@@ -31,15 +30,19 @@ function ProjectCard(props) {
           {props.projects.map((seed) => {
             return (
               <div classname="card">
-                <Card border="dark" style={{ width: '18rem' }}>
+                <Card border="dark" style={{ width: "18rem" }}>
                   <Card.Body>
-                  <Card.Header as="h5">{seed.name}</Card.Header>
+                    <Card.Header as="h5">{seed.name}</Card.Header>
                     {/* <Card.Title>{seed.name}</Card.Title> */}
                     <Card.Title>{seed.repo}</Card.Title>
                     <Card.Text>{seed.description}</Card.Text>
                     <Card.Text>{seed.role_needed}</Card.Text>
-                    <Card.Text className="text-muted">Comments: {seed.comments} | Bookmarks: {seed.bookmarks}</Card.Text>
-                    <Card.Footer className="text-muted" >Project Created: {seed.project_created} </Card.Footer>
+                    <Card.Text className="text-muted">
+                      Comments: {seed.comments} | Bookmarks: {seed.bookmarks}
+                    </Card.Text>
+                    <Card.Footer className="text-muted">
+                      Project Created: {seed.project_created}
+                    </Card.Footer>
                   </Card.Body>
                 </Card>
               </div>
