@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -9,6 +10,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "2",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -18,6 +20,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "3",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -27,6 +30,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "4",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -36,6 +40,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "5",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":
@@ -46,6 +51,7 @@
     "project_created": "Sep 10, 2021"
   },
   {
+    "id": "6",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -55,6 +61,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "7",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -64,6 +71,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "8",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -73,6 +81,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "9",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -82,6 +91,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "10",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":
@@ -92,6 +102,7 @@
     "project_created": "Sep 10, 2021"
   },
   {
+    "id": "11",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -101,6 +112,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "12",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -110,6 +122,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "13",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -119,6 +132,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "14",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -128,6 +142,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "15",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":
@@ -138,6 +153,7 @@
     "project_created": "Sep 10, 2021"
   },
   {
+    "id": "16",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -147,6 +163,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "17",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -156,6 +173,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "18",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -165,6 +183,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "19",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -174,6 +193,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "20",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":
@@ -184,6 +204,7 @@
     "project_created": "Sep 10, 2021"
   },
   {
+    "id": "21",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -193,6 +214,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "22",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -202,6 +224,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "23",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -211,6 +234,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "24",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -220,6 +244,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "25",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":
@@ -230,6 +255,7 @@
     "project_created": "Sep 10, 2021"
   },
   {
+    "id": "26",
     "name": "NBA Player Search",
     "github_repo": "https://github.com/Jason-M-Bailey/nbaplayersearch",
     "description": "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
@@ -239,6 +265,7 @@
     "project_created": "Sep 1, 2021"
   },
   {
+    "id": "27",
     "name": "Movie Drink Matchmaker",
     "github_repo": "https://github.com/evperkinsjr/movie-drink-matchmaker",
     "description": "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
@@ -248,6 +275,7 @@
     "project_created": "Sep 2, 2021"
   },
   {
+    "id": "28",
     "name": "Employee Tracker",
     "github_repo": "https://github.com/CrowdeRyan/Employee_Tracker",
     "description": "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
@@ -257,6 +285,7 @@
     "project_created": "Sep 3, 2021"
   },
   {
+    "id": "29",
     "name": "E-Commerce Backend",
     "github_repo": "https://github.com/SmithRBG/E-Commerce_Back_End",
     "description": "Command-line application serves as the back end of an e-commerce site.",
@@ -266,6 +295,7 @@
     "project_created": "Sep 4, 2021"
   },
   {
+    "id": "30",
     "name": "Git Share",
     "github_repo": "https://github.com/Jason-M-Bailey/git-share",
     "description":

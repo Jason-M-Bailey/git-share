@@ -1,6 +1,17 @@
 [ ✔️ ] GET seed data
 
-[ ] create account / login
+[ ] Create account / login
 [ ] POST new project
 
-[ ] standardize card sizes
+[ ] Single Project Card page
+
+# New Tech
+[ ] Draggable components
+[ ] Github Auth?
+[ ] Infinite scroll (homepage refreshes itself as user scroll to bottom)
+
+
+# Bonus
+[ ] Standardize card sizes
+[ ] Allow users comments
+[ ] Allow users to bookmark repos

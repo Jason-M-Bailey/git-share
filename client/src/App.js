@@ -1,13 +1,24 @@
-import "./App.css";
-import Navbar from "./components/Navbar/navbar";
-
-import ProjectCard from "./components/ProjectCard/projectcard";
-import projectseed from "./seed/projectData.json";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+// styling
+import "./App.css";
+
+// components
+import Navbar from "./components/Navbar/navbar";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import ProjectCard from "./components/ProjectCard/projectcard";
+
+// utils
 import API from "./utils/API";
 
+// seed
+import projectseed from "./seed/projectData.json";
 
 function App() {
+
+  // search github repos
   const [projects, setProjects] = useState(projectseed);
   const [repos, setRepos] = useState("");
   const handleInputSearch = (e) => {
@@ -26,18 +37,26 @@ function App() {
     });
   };
 
+
+  // todo: clean this up so its merely Router, Switch, Route, Link
   return (
     <div className="App">
-
       <div>
         <Navbar
           handleInputSearch={handleInputSearch}
           setRepos={setRepos}
           repos={repos}
         />
-        <ProjectCard projects={projects} />
+        <Router>
+          <Route exact path="/" element={<Home />}>
+            {/* this is not ideal, it should be on the <Home /> component but I could not get it to work properly tonight */}
+            <ProjectCard projects={projects} />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+        </Router>
       </div>
-
     </div>
   );
 }
