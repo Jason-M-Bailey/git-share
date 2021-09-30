@@ -3,15 +3,17 @@ import { Card } from "react-bootstrap";
 import React from "react";
 import { Wrapper } from "./ProjectCard.styles";
 // import Card from "react-bootstrap/Card";
-
+// import projectseed from "./seed/projectData.json";
 import Row from "react-bootstrap/Row";
 
 function ProjectCard(props) {
+  // const projects = useState(projectseed);
+
   return (
     <section id="projects" className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         {/* <div className="flex flex-col w-full mb-20"> */}
-          <Wrapper />
+        <Wrapper />
 
         {/* </div> */}
 
@@ -22,9 +24,8 @@ function ProjectCard(props) {
             return (
               <div classname="card">
                 <Card border="dark" style={{ width: "18rem" }}>
-
                   {/* add to seed data if we want images on the cards */}
-                {/* <Card.Img variant="top" src={seed.image} /> */}
+                  {/* <Card.Img variant="top" src={seed.image} /> */}
                   <Card.Body>
                     <Card.Header as="h5">{seed.name}</Card.Header>
                     {/* <Card.Title>{seed.name}</Card.Title> */}
