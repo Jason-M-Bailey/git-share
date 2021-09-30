@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar/navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import ProjectCard from "./components/ProjectCard/projectcard";
+import Register from "./components/Register"
+import AnotherGridLayout from "./components/Layout"
 
 // utils
 import API from "./utils/API";
@@ -54,6 +56,12 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/layout">
+            <AnotherGridLayout />
           </Route>
         </Router>
       </div>
