@@ -1,16 +1,17 @@
 const db = require("../models/oneModel");
 
 module.exports = {
-    findAll: function(req, res) {
+    find: function (req, res) {
         db.Project
             .find(req.query)
-            .sort({ date: -1 })
+            .populate("project_owner", "name id")
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(400).json(err));
     },
-    findById: function (req, res) {
+    findOne: function (req, res) {
         db.Project
-            .findById(req.params.id)
+            .findOne({ id: (req.params.id) })
+            .populate("project_owner", "name id")
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(400).json(err));
     },

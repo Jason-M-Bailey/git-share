@@ -3,12 +3,12 @@ const projectsController = require("../../controllers/projectsController");
 
 // Matches with "/api/projects"
 router.route("/")
-    .get(projectsController.findAll)
+    .get(projectsController.find)
     .post(projectsController.create);
 
 // Matches with "/api/projects/:1"
 router
     .route("/:id")
-    .get(projectsController.findById);
+    .get(projectsController.findOne);
 
 module.exports = router;
