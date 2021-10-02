@@ -12,6 +12,7 @@ import ProjectCard from "./components/ProjectCard/projectcard";
 import Register from "./components/Register";
 import AnotherGridLayout from "./components/Layout";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
+import ProjectForm from "./components/ProjectForm/projectForm";
 
 // utils
 import API from "./utils/API";
@@ -64,6 +65,7 @@ function App() {
               <AnotherGridLayout />
             </Route>
             <Route exact path="/add_new_project">
+              <ProjectForm />
               <ProjectCreate />
             </Route>
           </Switch>

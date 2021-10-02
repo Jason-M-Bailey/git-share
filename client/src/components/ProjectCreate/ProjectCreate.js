@@ -2,6 +2,7 @@ import React from "react";
 import "./projectCreate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+// import ReactDOM from "react-dom";
 import { v4 as uuidv4 } from "uuid";
 import Draggable from "react-draggable";
 import { FaPen, FaTrash } from "react-icons/fa";
@@ -24,6 +25,7 @@ function ProjectCreate() {
       <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
           <input
+            className="input"
             type="text"
             maxLength="50"
             placeholder="How will you make your Project Better?"
@@ -32,7 +34,12 @@ function ProjectCreate() {
           />
         </div>
 
-        <input type="submit" className="btn btn-block" value="Stick Postit" />
+        <input
+          className="input"
+          type="submit"
+          className="btn btn-block"
+          value="Stick Postit"
+        />
       </form>
     );
   };
@@ -155,27 +162,37 @@ function ProjectCreate() {
     window.location.reload();
   };
 
-  return (
-    <div className="container-fluid">
-      <div className="header-main">
-        <h1>Your Project</h1>
+  function Postit() {
+    return (
+      <div className="container-fluid">
+        <div className="header-main">
+          <h1>Prioritize</h1>
 
-        <ShowForm
-          showForm={() => setShowAddPost(!showAddPost)}
-          changeTextAndColor={showAddPost}
-        />
-        {showAddPost && <AddPost onSave={AddPosts} />}
+          <ShowForm
+            showForm={() => setShowAddPost(!showAddPost)}
+            changeTextAndColor={showAddPost}
+          />
+          {showAddPost && <AddPost onSave={AddPosts} />}
 
-        <Button onClick={deleteAllPost} className="btn delete-btn">
-          ❌ Clear Board
-        </Button>
+          <Button onClick={deleteAllPost} className="btn delete-btn">
+            ❌ Clear Board
+          </Button>
+        </div>
+        <div className="row postit-row">
+          {posts.length > 0 ? (
+            <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
+          ) : (
+            <div className="postit">Start Planning Your Project.</div>
+          )}
+        </div>
       </div>
-      <div className="row postit-row">
-        {posts.length > 0 ? (
-          <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
-        ) : (
-          <div className="postit">Start Planning Your Project.</div>
-        )}
+    );
+  }
+
+  return (
+    <div className="App">
+      <div className="container container-fluid">
+        <Postit />
       </div>
     </div>
   );
