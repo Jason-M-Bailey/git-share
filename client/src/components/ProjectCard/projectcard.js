@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 
-import { Wrapper } from "./ProjectCard.styles";
+import { Wrapper, Hover } from "./ProjectCard.styles";
 
 function ProjectCard(props) {
   return (
@@ -16,30 +16,36 @@ function ProjectCard(props) {
           {props.projects.map((seed) => {
             return (
               <div classname="card">
-                <Link to={`/project/${seed.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                  <Card
-                    border="dark"
-                    style={{ width: "18rem" }}
-                    clickable="true"
-                  >
-                    <Card.Body>
-                      <Card.Header as="h5">{seed.name}</Card.Header>
-                      <Card.Title>{seed.repo}</Card.Title>
-                      <Card.Text>{seed.description}</Card.Text>
-                      <Card.Text>{seed.role_needed}</Card.Text>
-                      <Card.Text></Card.Text>
-                      <Card.Text>
-                        <a href={seed.github_repo}>Visit Github Repo</a>
-                      </Card.Text>
-                      <Card.Text className="text-muted">
-                        Comments: {seed.comments} | Bookmarks: {seed.bookmarks}
-                      </Card.Text>
+                <Link
+                  to={`/project/${seed.id}`}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Hover>
+                    <Card
+                      border="dark"
+                      style={{ width: "18rem" }}
+                      clickable="true"
+                    >
+                      <Card.Body>
+                        <Card.Header as="h5">{seed.name}</Card.Header>
+                        <Card.Title>{seed.repo}</Card.Title>
+                        <Card.Text>{seed.description}</Card.Text>
+                        <Card.Text>{seed.role_needed}</Card.Text>
+                        <Card.Text></Card.Text>
+                        <Card.Text>
+                          <a href={seed.github_repo}>Visit Github Repo</a>
+                        </Card.Text>
+                        <Card.Text className="text-muted">
+                          Comments: {seed.comments} | Bookmarks:{" "}
+                          {seed.bookmarks}
+                        </Card.Text>
 
-                      <Card.Footer className="text-muted">
-                        Project Created: {seed.project_created}
-                      </Card.Footer>
-                    </Card.Body>
-                  </Card>
+                        <Card.Footer className="text-muted">
+                          Project Created: {seed.project_created}
+                        </Card.Footer>
+                      </Card.Body>
+                    </Card>
+                  </Hover>
                 </Link>
               </div>
             );
