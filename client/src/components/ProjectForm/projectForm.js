@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./projectForm.css";
 
 class ProjectForm extends React.Component {
@@ -44,6 +45,11 @@ class ProjectForm extends React.Component {
           Notes/Comments:
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
+        <a className="nav-link" href="/planning">
+          <button type="button" className="btn btn-info text-white">
+            Plan Your Project
+          </button>
+        </a>
       </form>
     );
   }

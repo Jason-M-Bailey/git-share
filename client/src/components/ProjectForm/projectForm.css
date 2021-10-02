@@ -1,9 +1,20 @@
 .inform {
   margin-top: 10%;
+  border-radius: 15px;
+}
+
+.submitBtn {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.form-control {
+  margin-left: 20px;
+  width: 95%;
 }
 
 .title {
-  display: flex;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 @media all and (min-width: 480px) {
