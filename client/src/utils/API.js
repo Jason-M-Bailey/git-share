@@ -6,6 +6,10 @@ export default {
     return axios.get("https://api.github.com/search/repositories?q=" + repos);
   },
 
+  getProject: function (id) {
+    return axios.get("/api/projects/" + id);
+  },
+
   // // get users from database
   // getUsers: function () {
   //   return axios.get("/api/users");

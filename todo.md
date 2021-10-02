@@ -4,8 +4,9 @@
 
 [ ] Create account / login
 [ ] POST new project
+[ ] Clickable Project to /project/:id page - Jason
 
-[ ] Single Project Card page
+[ ~✔️~ ] Single Project Card page
 
 # New Tech
 [ ] Draggable components - Ryan

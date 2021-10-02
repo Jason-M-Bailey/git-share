@@ -32,6 +32,7 @@ const userSeed = [
 
 const projects = [
   {
+    id: "1",
     name: "NBA Player Search",
     github_repo: "https://github.com/Jason-M-Bailey/nbaplayersearch",
     description:
@@ -39,6 +40,7 @@ const projects = [
     role_needed: "CSS",
   },
   {
+    id: "2",
     name: "Movie Drink Matchmaker",
     github_repo: "https://github.com/evperkinsjr/movie-drink-matchmaker",
     description:
@@ -46,6 +48,7 @@ const projects = [
     role_needed: "HTML",
   },
   {
+    id: "3",
     name: "Employee Tracker",
     github_repo: "https://github.com/CrowdeRyan/Employee_Tracker",
     description:
@@ -53,6 +56,7 @@ const projects = [
     role_needed: "ORM",
   },
   {
+    id: "4",
     name: "E-Commerce Backend",
     github_repo: "https://github.com/SmithRBG/E-Commerce_Back_End",
     description:
