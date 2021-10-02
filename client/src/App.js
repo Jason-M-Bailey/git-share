@@ -52,7 +52,6 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" element={<Home />}>
-              {/* this is not ideal, it should be on the <Home /> component but I could not get it to work properly tonight */}
               <ProjectCard projects={projects} />
             </Route>
             <Route exact path="/login">
@@ -65,8 +64,10 @@ function App() {
               <AnotherGridLayout />
             </Route>
             <Route exact path="/add_new_project">
-              {/* Form and Post-it */}
               <ProjectForm />
+            </Route>
+            <Route exact path="/planning">
+              ReactDOM.render(
               <ProjectCreate />
             </Route>
           </Switch>
