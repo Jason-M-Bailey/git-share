@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // styling
 import "./App.css";
@@ -9,8 +9,9 @@ import Navbar from "./components/Navbar/navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import ProjectCard from "./components/ProjectCard/projectcard";
-import Register from "./components/Register"
-import AnotherGridLayout from "./components/Layout"
+import Register from "./components/Register";
+import AnotherGridLayout from "./components/Layout";
+import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 
 // utils
 import API from "./utils/API";
@@ -19,7 +20,6 @@ import API from "./utils/API";
 import projectseed from "./seed/projectData.json";
 
 function App() {
-
   // search github repos
   const [projects, setProjects] = useState(projectseed);
   const [repos, setRepos] = useState("");
@@ -39,7 +39,6 @@ function App() {
     });
   };
 
-
   // todo: clean this up so its merely Router, Switch, Route, Link
   return (
     <div className="App">
@@ -50,19 +49,24 @@ function App() {
           repos={repos}
         />
         <Router>
-          <Route exact path="/" element={<Home />}>
-            {/* this is not ideal, it should be on the <Home /> component but I could not get it to work properly tonight */}
-            <ProjectCard projects={projects} />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/layout">
-            <AnotherGridLayout />
-          </Route>
+          <Switch>
+            <Route exact path="/" element={<Home />}>
+              {/* this is not ideal, it should be on the <Home /> component but I could not get it to work properly tonight */}
+              <ProjectCard projects={projects} />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/layout">
+              <AnotherGridLayout />
+            </Route>
+            <Route exact path="/add_new_project">
+              <ProjectCreate />
+            </Route>
+          </Switch>
         </Router>
       </div>
     </div>
