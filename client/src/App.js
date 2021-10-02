@@ -67,7 +67,6 @@ function App() {
               <ProjectForm />
             </Route>
             <Route exact path="/planning">
-              ReactDOM.render(
               <ProjectCreate />
             </Route>
           </Switch>

@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import "./projectCreate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
@@ -8,32 +9,6 @@ import Draggable from "react-draggable";
 import { FaPen, FaTrash } from "react-icons/fa";
 
 function ProjectCreate() {
-  function Postit() {
-    return (
-      <div className="container-fluid">
-        <div className="header-main">
-          <h1>Prioritize</h1>
-
-          <ShowForm
-            showForm={() => setShowAddPost(!showAddPost)}
-            changeTextAndColor={showAddPost}
-          />
-          {showAddPost && <AddPost onSave={AddPosts} />}
-
-          <Button onClick={deleteAllPost} className="btn delete-btn">
-            ❌ Clear Board
-          </Button>
-        </div>
-        <div className="row postit-row">
-          {posts.length > 0 ? (
-            <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
-          ) : (
-            <div className="postit">Start Planning Your Project.</div>
-          )}
-        </div>
-      </div>
-    );
-  }
   const AddPost = ({ onSave }) => {
     const [text, setText] = useState("");
 
@@ -75,6 +50,33 @@ function ProjectCreate() {
       </form>
     );
   };
+
+  function Postit() {
+    return (
+      <div className="container-fluid">
+        <div className="header-main">
+          <h1>Prioritize</h1>
+
+          <ShowForm
+            showForm={() => setShowAddPost(!showAddPost)}
+            changeTextAndColor={showAddPost}
+          />
+          {showAddPost && <AddPost onSave={AddPosts} />}
+
+          <Button onClick={deleteAllPost} className="btn delete-btn">
+            ❌ Clear Board
+          </Button>
+        </div>
+        <div className="row postit-row">
+          {posts.length > 0 ? (
+            <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
+          ) : (
+            <div className="postit">Start Planning Your Project.</div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   const Button = ({ color, text, onClick }) => {
     return (
@@ -149,6 +151,16 @@ function ProjectCreate() {
 
   const [posts, setPosts] = useState([]);
   const [showAddPost, setShowAddPost] = useState(false);
+
+  const getPosts = JSON.parse(localStorage.getItem("postAdded"));
+
+  useEffect(() => {
+    if (getPosts == null) {
+      setPosts([]);
+    } else {
+      setPosts(getPosts);
+    }
+  }, []);
 
   const AddPosts = (post) => {
     const id = uuidv4();
