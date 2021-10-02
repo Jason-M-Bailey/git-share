@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import AnotherGridLayout from "./components/Layout";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
+import ProjectId from "./components/ProjectId/ProjectId";
 
 // utils
 import API from "./utils/API";
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route path="/project/:id">
+              <ProjectId />
             </Route>
             <Route exact path="/layout">
               <AnotherGridLayout />
