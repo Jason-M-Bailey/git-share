@@ -25,7 +25,7 @@ class ProjectForm extends React.Component {
   render() {
     return (
       <form className="inform">
-        <label>
+        <label className="title">
           Project Name:
           <input
             type="text"

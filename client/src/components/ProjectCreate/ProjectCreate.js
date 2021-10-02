@@ -35,9 +35,8 @@ function ProjectCreate() {
         </div>
 
         <input
-          className="input"
+          className="input btn btn-block"
           type="submit"
-          className="btn btn-block"
           value="Stick Postit"
         />
       </form>
