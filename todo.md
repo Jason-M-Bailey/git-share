@@ -1,21 +1,25 @@
 [ ✔️ ] GET seed data
-
 [ ✔️ ] Routes - Enrico
-
-[ ] Create account / login
-[ ] POST new project
+[ ~✔️~ ] Single Project Card page
+[✔️ ] POST new project
 [ ✔️ ] Clickable Project to /project/:id page - Jason
 
-[ ~✔️~ ] Single Project Card page
+*** don't forget to run 'npm i' since enrico's push deleted package-lock.json from main
+
+*** committing so heroku deployment will reconnect with packages needed
+
+
+[ ] Create account / login
+
+[ ] GET projects from database
 
 # New Tech
-
 [ ] Draggable components - Ryan
 [ ] Github Auth?
 [ ] Infinite scroll (homepage refreshes itself as user scroll to bottom)
 
-# Bonus
 
+# Bonus
 [ ] Standardize card sizes
 [ ] Allow users comments
 [ ] Allow users to bookmark repos
