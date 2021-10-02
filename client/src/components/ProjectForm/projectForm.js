@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 
 import "./projectForm.css";
 
@@ -53,6 +53,64 @@ class ProjectForm extends React.Component {
       </form>
     );
   }
+}
+
+export default ProjectForm; */
+
+import React, { useState } from "react";
+import API from "../../utils/API";
+import "./projectForm.css";
+
+function ProjectForm() {
+  const [title, setTitle] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [deadline, setDeadline] = useState([]);
+
+  const titleUpdate = (event) => {
+    setTitle(event.target.value)
+  }
+
+  const descriptionUpdate = (event) => {
+    setDescription(event.target.value)
+  }
+
+  const deadlineUpdate = (event) => {
+    setDeadline(event.target.value)
+  }
+  
+  const saveProjectHandler = event => {
+    event.preventDefault();
+
+    API.saveProject({
+      // id is hardcoded right now. generate with uuid?
+      id: "4",
+      title: title,
+      description: description,
+      deadline: deadline
+    })
+    .then(() => alert("Project Added"))
+    .catch(err => console.log(err));
+  }
+
+  return (
+    <div>
+        <form onSubmit={saveProjectHandler} className="inform">
+            <div>
+              <label className="title">Project Title:</label>
+              <input required onChange={titleUpdate}></input>
+            </div>
+            <div>
+              <label className="title">Description:</label>
+              <input required onChange={descriptionUpdate}></input>
+            </div>
+            <div>
+              <label className="title">Deadline</label>
+              <input required onChange={deadlineUpdate}></input>
+            </div>
+            <button type="submit"> Submit</button>
+        </form>
+    </div>
+  );
 }
 
 export default ProjectForm;
