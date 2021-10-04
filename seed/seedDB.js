@@ -32,36 +32,28 @@ const userSeed = [
 
 const projects = [
   {
-    id: "1",
-    name: "NBA Player Search",
+    title: "NBA Player Search",
     github_repo: "https://github.com/Jason-M-Bailey/nbaplayersearch",
     description:
       "An app to look up nba players, learn more about their stats and history. And most importantly, to know more than your friends so you can win those arguments about whether LeBron is better than Kobe.",
-    role_needed: "CSS",
   },
   {
-    id: "2",
-    name: "Movie Drink Matchmaker",
+    title: "Movie Drink Matchmaker",
     github_repo: "https://github.com/evperkinsjr/movie-drink-matchmaker",
     description:
       "A movie night app that provides the user with a movie and drink recommendation based on their selections.",
-    role_needed: "HTML",
   },
   {
-    id: "3",
-    name: "Employee Tracker",
+    title: "Employee Tracker",
     github_repo: "https://github.com/CrowdeRyan/Employee_Tracker",
     description:
       "A command line application to view, add, remove and update a company's employees. This application utilizes Node.js, Inquirer and MySQL, and is written with JavaScript.",
-    role_needed: "ORM",
   },
   {
-    id: "4",
-    name: "E-Commerce Backend",
+    title: "E-Commerce Backend",
     github_repo: "https://github.com/SmithRBG/E-Commerce_Back_End",
     description:
       "Command-line application serves as the back end of an e-commerce site.",
-    role_needed: "JavaScript",
   },
 ];
 
