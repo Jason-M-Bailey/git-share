@@ -63,52 +63,57 @@ import "./projectForm.css";
 
 function ProjectForm() {
   const [title, setTitle] = useState([]);
+  const [github_repo, setGithub_Repo] = useState([]);
   const [description, setDescription] = useState([]);
-  const [deadline, setDeadline] = useState([]);
+  // const [deadline, setDeadline] = useState([]);
 
   const titleUpdate = (event) => {
-    setTitle(event.target.value)
-  }
+    setTitle(event.target.value);
+  };
 
+  const github_repoUpdate = (event) => {
+    setGithub_Repo(event.target.value);
+  };
   const descriptionUpdate = (event) => {
-    setDescription(event.target.value)
-  }
+    setDescription(event.target.value);
+  };
 
-  const deadlineUpdate = (event) => {
-    setDeadline(event.target.value)
-  }
-  
-  const saveProjectHandler = event => {
+  // const deadlineUpdate = (event) => {
+  //   setDeadline(event.target.value)
+  // }
+
+  const saveProjectHandler = (event) => {
     event.preventDefault();
 
     API.saveProject({
       // id is hardcoded right now. generate with uuid?
-      id: "4",
+      // id: "4",
       title: title,
+      github_repo: github_repo,
       description: description,
-      deadline: deadline
+      // deadline: deadline
     })
-    .then(() => alert("Project Added"))
-    .catch(err => console.log(err));
-  }
+      .then(() => alert("Project Added"))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
-        <form onSubmit={saveProjectHandler} className="inform">
-            <div>
-              <label className="title">Project Title:</label>
-              <input required onChange={titleUpdate}></input>
-            </div>
-            <div>
-              <label className="title">Description:</label>
-              <input required onChange={descriptionUpdate}></input>
-            </div>
-            <div>
-              <label className="title">Deadline</label>
-              <input required onChange={deadlineUpdate}></input>
-            </div>
-            <button type="submit"> Submit</button>
-        </form>
+      <form onSubmit={saveProjectHandler} className="inform">
+        <div>
+          <label className="title">Project Title:</label>
+          <input required onChange={titleUpdate}></input>
+        </div>
+        <div>
+          <label className="title">Github Repo:</label>
+          <input required onChange={github_repoUpdate}></input>
+        </div>
+        <div>
+          <label className="title">Description:</label>
+          <input required onChange={descriptionUpdate}></input>
+        </div>
+        <button type="submit"> Submit</button>
+      </form>
     </div>
   );
 }
