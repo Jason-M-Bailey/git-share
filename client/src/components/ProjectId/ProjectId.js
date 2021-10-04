@@ -6,104 +6,100 @@ import { useParams } from "react-router-dom";
 import API from "../../utils/API";
 
 // styling
-import { Wrapper } from "./ProjectId.styles";
+import { Wrapper, Hover } from "./ProjectId.styles";
 
 function ProjectId(props) {
   const [project, setProject] = useState({});
 
   console.log("set Project ");
 
-
   const { id } = useParams();
   useEffect(() => {
     console.log("inside use effect ");
+
+    console.log(`project title is ${project.title}`);
+
     API.getProject(id)
       .then((res) => setProject(res.data))
       .catch((err) => console.error(err));
   });
 
+  // console.log(`project priority #1 is ${project.priorities[0]}`);
+  // console.log(`project priority #2 is ${project.priorities[1]}`);
 
   return (
     <section>
       <Wrapper>
         <div>
-          <h1>Title: {project.title}</h1>
+          <h1>{project.title} by: {project.github_username}</h1>
           <h4>
             <a href={project.github_repo}>Visit Github Repo</a>
           </h4>
-          <h5>Description: {project.description}</h5>
+          <h5>{project.description}</h5>
 
-          <Row xs={1} md={2} lg={3}>
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">CSS</Card.Header>
-                <Card.Text>Improve overall design.</Card.Text>
+          <h3>{project.priorities}</h3>
 
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
+          <section
+            id="projects"
+            className="text-gray-400 bg-gray-900 body-font"
+          >
+            <div className="container px-5 py-10 mx-auto text-center lg:px-40">
 
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">POST</Card.Header>
-                <Card.Text>Post Projects functionality</Card.Text>
+              {/* TODO: MUST FIGURE OUT HOW TO MAP THROUGH THE PRIORITIES */}
+              <Row xs={3} md={3} lg={3} xxl={3} className="g-4">
+                <div classname="card">
+                  <Hover>
+                    <Card
+                      border="dark"
+                      style={{ width: "18rem" }}
+                      clickable="true"
+                    >
+                      <Card.Body>
+                        <Card.Header as="h5">
+                          {/* if you change this to priorities[1] AFTER you're on the page then it will read the data */}
+                          {project.priorities}
+                        </Card.Header>
+                        <Card.Text>some text about the priority</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Hover>
 
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
+                  <Hover>
+                    <Card
+                      border="dark"
+                      style={{ width: "18rem" }}
+                      clickable="true"
+                    >
+                      <Card.Body>
+                        <Card.Header as="h5">
+                          {/* if you change this to priorities[2] AFTER you're on the page then it will read the data */}
+                          {project.priorities}
+                        </Card.Header>
+                        <Card.Text>some text about the priority</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Hover>
 
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">Login / Register</Card.Header>
-                <Card.Text>
-                  Allow users to register and login to add projects
-                </Card.Text>
+                  <Hover>
+                    <Card
+                      border="dark"
+                      style={{ width: "18rem" }}
+                      clickable="true"
+                    >
+                      <Card.Body>
+                        <Card.Header as="h5">
+                          {/* if you change this to priorities[0] AFTER you're on the page then it will read the data */}
+                          {project.priorities}
+                        </Card.Header>
+                        <Card.Text>some text about the priority</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Hover>
 
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
-
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">Login / Register</Card.Header>
-                <Card.Text>
-                  Allow users to register and login to add projects
-                </Card.Text>
-
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
-
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">New Tech #1</Card.Header>
-                <Card.Text>Draggable priorities!</Card.Text>
-
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
-
-            <Card>
-              <Card.Body>
-                <Card.Header as="h3">New Tech #2</Card.Header>
-                <Card.Text>???</Card.Text>
-
-                <Card.Footer className="text-muted">
-                  October 4th, 2021
-                </Card.Footer>
-              </Card.Body>
-            </Card>
-          </Row>
+                </div>
+              </Row>
+            </div>
+          </section>
         </div>
       </Wrapper>
     </section>

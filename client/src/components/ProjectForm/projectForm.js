@@ -63,6 +63,7 @@ import "./projectForm.css";
 
 function ProjectForm() {
   const [title, setTitle] = useState([]);
+  const [github_username, setGithub_Username] = useState([]);
   const [github_repo, setGithub_Repo] = useState([]);
   const [description, setDescription] = useState([]);
   // const [deadline, setDeadline] = useState([]);
@@ -70,6 +71,10 @@ function ProjectForm() {
   const titleUpdate = (event) => {
     setTitle(event.target.value);
   };
+
+  const github_usernameUpdate = (event) => {
+    setGithub_Username(event.target.value);
+  }
 
   const github_repoUpdate = (event) => {
     setGithub_Repo(event.target.value);
@@ -89,6 +94,7 @@ function ProjectForm() {
       // id is hardcoded right now. generate with uuid?
       // id: "4",
       title: title,
+      github_username: github_username,
       github_repo: github_repo,
       description: description,
       // deadline: deadline
@@ -103,6 +109,10 @@ function ProjectForm() {
         <div>
           <label className="title">Project Title:</label>
           <input required onChange={titleUpdate}></input>
+        </div>
+        <div>
+          <label className="title">Github Username:</label>
+          <input required onChange={github_usernameUpdate}></input>
         </div>
         <div>
           <label className="title">Github Repo:</label>

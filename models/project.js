@@ -8,6 +8,7 @@ const ProjectSchema = new Schema({
   //   type: mongoose.Schema.Types.ObjectId,
   //   ref: "User"
   // },
+  github_username: { type: String, required: true },
   github_repo: { type: String, trim: true },
   description: { type: String },
   // creationdate: { type: Date, default: Date.now },
@@ -17,6 +18,11 @@ const ProjectSchema = new Schema({
   //   type: mongoose.Schema.Types.ObjectId,
   //   ref: "Comment"
   // }]
+  priorities: [
+    {
+      type: String,
+    },
+  ],
 });
 
 const Project = mongoose.model("Project", ProjectSchema);
