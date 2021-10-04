@@ -8,9 +8,12 @@ import API from "../../utils/API";
 // styling
 import { Wrapper } from "./ProjectId.styles";
 
-function ProjectId() {
+function ProjectId(props) {
   const [project, setProject] = useState({});
+
   console.log("set Project ");
+
+
   const { id } = useParams();
   useEffect(() => {
     console.log("inside use effect ");
@@ -19,15 +22,16 @@ function ProjectId() {
       .catch((err) => console.error(err));
   });
 
+
   return (
     <section>
       <Wrapper>
         <div>
-          <h1>{project.name}</h1>
+          <h1>Title: {project.title}</h1>
           <h4>
             <a href={project.github_repo}>Visit Github Repo</a>
           </h4>
-          <h5>{project.description}</h5>
+          <h5>Description: {project.description}</h5>
 
           <Row xs={1} md={2} lg={3}>
             <Card>

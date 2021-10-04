@@ -3,6 +3,7 @@
 [ ~✔️~ ] Single Project Card page
 [✔️ ] POST new project
 [ ✔️ ] Clickable Project to /project/:id page - Jason
+[ ✔️ ] GET projects from database
 
 *** don't forget to run 'npm i' since enrico's push deleted package-lock.json from main
 
@@ -11,7 +12,6 @@
 
 [ ] Create account / login
 
-[ ] GET projects from database
 
 # New Tech
 [ ] Draggable components - Ryan
