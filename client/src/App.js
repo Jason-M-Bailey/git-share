@@ -14,6 +14,7 @@ import AnotherGridLayout from "./components/Layout";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
+import Saved from "./pages/saved";
 
 // utils
 import API from "./utils/API";
@@ -52,8 +53,8 @@ function App() {
         />
         <Router>
           <Switch>
-            <Route exact path="/" element={<Home />}>
-              <ProjectCard projects={projects} />
+            <Route exact path="/">
+              <Saved />
             </Route>
             <Route exact path="/login">
               <Login />
@@ -62,16 +63,19 @@ function App() {
               <Register />
             </Route>
             <Route path="/project/:id">
-              <ProjectId />
+              <ProjectId projects={projects} />
             </Route>
             <Route exact path="/layout">
               <AnotherGridLayout />
             </Route>
-            <Route exact path="/add_new_project">
+            {/* <Route exact path="/add_new_project">
               <ProjectForm />
-            </Route>
+            </Route> */}
             <Route exact path="/planning">
               <ProjectCreate />
+            </Route>
+            <Route path="/search">
+              <ProjectCard projects={projects} />
             </Route>
           </Switch>
         </Router>

@@ -12,16 +12,22 @@ function ProjectId() {
   const [project, setProject] = useState({});
   console.log("set Project ");
   const { id } = useParams();
+  console.log(id);
+
   useEffect(() => {
     console.log("inside use effect ");
     API.getProject(id)
-      .then((res) => setProject(res.data))
+      .then((res) => {
+        setProject(res.data);
+        console.log(res.data);
+      })
       .catch((err) => console.error(err));
   });
 
   return (
     <section>
       <Wrapper>
+        {console.log(project)}
         <div>
           <h1>{project.name}</h1>
           <h4>
@@ -102,6 +108,12 @@ function ProjectId() {
           </Row>
         </div>
       </Wrapper>
+      {/* 
+      <a className="nav-link" href=`/{project.id}/planning">
+        <button type="button" className="btn btn-info text-white">
+          Plan Your Project
+        </button>
+      </a> */}
     </section>
   );
 }
