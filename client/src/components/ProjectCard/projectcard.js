@@ -13,11 +13,11 @@ function ProjectCard(props) {
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <Wrapper />
         <Row xs={1} md={2} lg={3} xxl={4} className="g-4">
-          {props.projects.map((seed) => {
+          {props.projects.map((project) => {
             return (
               <div classname="card">
                 <Link
-                  to={`/project/${seed.id}`}
+                  to={`/project/${project._id}`}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Hover>
@@ -27,21 +27,21 @@ function ProjectCard(props) {
                       clickable="true"
                     >
                       <Card.Body>
-                        <Card.Header as="h5">{seed.name}</Card.Header>
-                        <Card.Title>{seed.repo}</Card.Title>
-                        <Card.Text>{seed.description}</Card.Text>
-                        <Card.Text>{seed.role_needed}</Card.Text>
+                        <Card.Header as="h5">{project.title}</Card.Header>
+                        <Card.Title>{project.repo}</Card.Title>
+                        <Card.Text>{project.description}</Card.Text>
+                        {/* <Card.Text>{project.role_needed}</Card.Text> */}
                         <Card.Text></Card.Text>
                         <Card.Text>
-                          <a href={seed.github_repo}>Visit Github Repo</a>
+                          <a href={project.github_repo}>Visit Github Repo</a>
                         </Card.Text>
-                        <Card.Text className="text-muted">
-                          Comments: {seed.comments} | Bookmarks:{" "}
-                          {seed.bookmarks}
-                        </Card.Text>
+                        {/* <Card.Text className="text-muted">
+                          Comments: {project.comments} | Bookmarks:{" "}
+                          {project.bookmarks}
+                        </Card.Text> */}
 
                         <Card.Footer className="text-muted">
-                          Project Created: {seed.project_created}
+                          Project Created By: {project.project_created}
                         </Card.Footer>
                       </Card.Body>
                     </Card>
