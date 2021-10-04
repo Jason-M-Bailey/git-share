@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // styling
@@ -19,26 +19,43 @@ import ProjectId from "./components/ProjectId/ProjectId";
 import API from "./utils/API";
 
 // seed
-import projectseed from "./seed/projectData.json";
+// import projectseed from "./seed/projectData.json";
 
 function App() {
   // search github repos
-  const [projects, setProjects] = useState(projectseed);
-  const [repos, setRepos] = useState("");
-  const handleInputSearch = (e) => {
-    console.log(repos);
-    API.getGithubUser(repos).then((res) => {
-      console.log(res.data);
-      const newRepos = res.data.items.map((repo) => {
-        return {
-          name: repo.full_name,
-          github_repo: repo.html_url,
-          description: repo.description,
-          role_needed: repo.language,
-        };
-      });
-      setProjects(newRepos);
-    });
+  // const [projects, setProjects] = useState(projectseed);
+  // const [repos, setRepos] = useState("");
+  // const handleInputSearch = (e) => {
+  //   console.log(repos);
+  //   API.getGithubUser(repos).then((res) => {
+  //     console.log(res.data);
+  //     const newRepos = res.data.items.map((repo) => {
+  //       return {
+  //         name: repo.full_name,
+  //         github_repo: repo.html_url,
+  //         description: repo.description,
+  //         role_needed: repo.language,
+  //       };
+  //     });
+  //     setProjects(newRepos);
+  //   });
+  // };
+
+  // Setting our component's initial state
+  const [projects, setProjects] = useState([]);
+
+  // Load all projects and store them with setProjects
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  // Loads all books and sets them to books
+  function loadProjects() {
+    API.getProjects()
+      .then(res => 
+        setProjects(res.data)
+      )
+      .catch(err => console.log(err));
   };
 
   // todo: clean this up so its merely Router, Switch, Route, Link
@@ -46,9 +63,9 @@ function App() {
     <div className="App">
       <div>
         <Navbar
-          handleInputSearch={handleInputSearch}
-          setRepos={setRepos}
-          repos={repos}
+        // handleInputSearch={handleInputSearch}
+        // setRepos={setRepos}
+        // repos={repos}
         />
         <Router>
           <Switch>
