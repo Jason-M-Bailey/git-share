@@ -17,7 +17,7 @@ function ProjectCard(props) {
             return (
               <div classname="card">
                 <Link
-                  to={`/project/${project._id}`}
+                  to={"/project/" + project._id}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Hover>
