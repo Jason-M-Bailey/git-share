@@ -19,7 +19,7 @@ function NavbarApp(props) {
         <Navbar.Brand href="/">GitShare 2.0</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          {/* <Nav className="me-auto">
             <NavDropdown title="Sort" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Most Bookmarks
@@ -34,12 +34,12 @@ function NavbarApp(props) {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-          </Nav>
+          </Nav> */}
 
           {/* todo: remove search button and use onSubmit to search --- or even better, return results as user begins to type */}
           
           
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <FormControl
               name="repos"
               value={props.repos}
@@ -52,7 +52,7 @@ function NavbarApp(props) {
             <Button variant="outline-success" onClick={props.handleInputSearch}>
               Search
             </Button>
-          </Form>
+          </Form> */}
           <Nav>
             <Nav.Link href="/add_new_project">Add New Project</Nav.Link>
 

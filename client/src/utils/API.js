@@ -21,9 +21,9 @@ export default {
   // },
 
   // // get projects from database
-  // getProjects: function () {
-  //   return axios.get("/api/projects");
-  // },
+  getProjects: function () {
+    return axios.get("/api/projects");
+  },
 
   // save project to database
   saveProject: function (projectData) {
