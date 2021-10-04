@@ -1,7 +1,5 @@
-import React from "react";
-
+/* import React from "react";
 import "./projectForm.css";
-
 class ProjectForm extends React.Component {
   constructor(props) {
     super(props);
@@ -9,20 +7,16 @@ class ProjectForm extends React.Component {
       isGoing: true,
       numberOfGuests: 2,
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-
     this.setState({
       [name]: value,
     });
   }
-
   render() {
     return (
       <form className="inform">
@@ -53,6 +47,64 @@ class ProjectForm extends React.Component {
       </form>
     );
   }
+}
+export default ProjectForm; */
+
+import React, { useState } from "react";
+import API from "../../utils/API";
+import "./projectForm.css";
+import { v4 as uuidv4 } from "uuid";
+
+function ProjectForm() {
+  const [title, setTitle] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [deadline, setDeadline] = useState([]);
+
+  const titleUpdate = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const descriptionUpdate = (event) => {
+    setDescription(event.target.value);
+  };
+
+  const deadlineUpdate = (event) => {
+    setDeadline(event.target.value);
+  };
+
+  const saveProjectHandler = (event) => {
+    event.preventDefault();
+
+    API.saveProject({
+      // id is hardcoded right now. generate with uuid?
+      id: uuidv4(),
+      title: title,
+      description: description,
+      deadline: deadline,
+    })
+      .then(() => alert("Project Added"))
+      .catch((err) => console.log(err));
+  };
+
+  return (
+    <div>
+      <form onSubmit={saveProjectHandler} className="inform">
+        <div>
+          <label className="title">Project Title:</label>
+          <input required onChange={titleUpdate}></input>
+        </div>
+        <div>
+          <label className="title">Description:</label>
+          <input required onChange={descriptionUpdate}></input>
+        </div>
+        <div>
+          <label className="title">Deadline</label>
+          <input required onChange={deadlineUpdate}></input>
+        </div>
+        <button type="submit"> Submit</button>
+      </form>
+    </div>
+  );
 }
 
 export default ProjectForm;

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import "./projectCreate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-// import ReactDOM from "react-dom";
+
 import { v4 as uuidv4 } from "uuid";
 import Draggable from "react-draggable";
 import { FaPen, FaTrash } from "react-icons/fa";
@@ -23,7 +23,7 @@ function ProjectCreate() {
       } else {
         onSave({ text, day });
       }
-      //by default the text will be empty
+
       setText("");
 
       setText("");
@@ -50,33 +50,6 @@ function ProjectCreate() {
       </form>
     );
   };
-
-  function Postit() {
-    return (
-      <div className="container-fluid">
-        <div className="header-main">
-          <h1>Prioritize</h1>
-
-          <ShowForm
-            showForm={() => setShowAddPost(!showAddPost)}
-            changeTextAndColor={showAddPost}
-          />
-          {showAddPost && <AddPost onSave={AddPosts} />}
-
-          <Button onClick={deleteAllPost} className="btn delete-btn">
-            ❌ Clear Board
-          </Button>
-        </div>
-        <div className="row postit-row">
-          {posts.length > 0 ? (
-            <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
-          ) : (
-            <div className="postit">Start Planning Your Project.</div>
-          )}
-        </div>
-      </div>
-    );
-  }
 
   const Button = ({ color, text, onClick }) => {
     return (
@@ -205,7 +178,32 @@ function ProjectCreate() {
     localStorage.setItem("postAdded", JSON.stringify(myData));
     window.location.reload();
   };
+  function Postit() {
+    return (
+      <div className="container-fluid">
+        <div className="header-main">
+          <h1>Prioritize</h1>
 
+          <ShowForm
+            showForm={() => setShowAddPost(!showAddPost)}
+            changeTextAndColor={showAddPost}
+          />
+          {showAddPost && <AddPost onSave={AddPosts} />}
+
+          <Button onClick={deleteAllPost} className="btn delete-btn">
+            ❌ Clear Board
+          </Button>
+        </div>
+        <div className="row postit-row">
+          {posts.length > 0 ? (
+            <Posts posts={posts} onDelete={deletePost} onEdit={editPost} />
+          ) : (
+            <div className="postit">Start Planning Your Project.</div>
+          )}
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div className="container container-fluid">

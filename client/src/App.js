@@ -63,15 +63,15 @@ function App() {
             </Route>
             <Route path="/project/:id">
               <ProjectId />
+              <Route path="/planning">
+                <ProjectCreate />
+              </Route>
             </Route>
             <Route exact path="/layout">
               <AnotherGridLayout />
             </Route>
             <Route exact path="/add_new_project">
               <ProjectForm />
-            </Route>
-            <Route exact path="/planning">
-              <ProjectCreate />
             </Route>
           </Switch>
         </Router>
