@@ -41,7 +41,7 @@ function ProjectCard(props) {
                         </Card.Text> */}
 
                         <Card.Footer className="text-muted">
-                          Project Created By: {project.project_created}
+                          Project Created By: {project.github_username}
                         </Card.Footer>
                       </Card.Body>
                     </Card>
