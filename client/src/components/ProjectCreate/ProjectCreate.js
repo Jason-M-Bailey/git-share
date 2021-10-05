@@ -36,6 +36,7 @@ function ProjectCreate() {
       <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
           <input
+            className="text-area"
             type="text"
             maxlength="50"
             placeholder="How will you make your Project Better?"
@@ -44,7 +45,7 @@ function ProjectCreate() {
           />
         </div>
 
-        <input type="submit" className="btn btn-block" value="Stick Postit" />
+        <input type="submit" className="stick btn btn-block" value="Stick Postit" />
       </form>
     );
   };
