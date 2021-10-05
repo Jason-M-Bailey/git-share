@@ -27,12 +27,12 @@
 
 [ ] Github Auth? - Enrico & Ryan
 
-[ ] Sweet Alert - https://www.npmjs.com/package/sweetalert - Jason
+[✔️] Sweet Alert - https://www.npmjs.com/package/sweetalert
 
 
 # Bonus
 
-[ ] Import Github profile image
+[ ] Import Github profile image --- this only works if github auth is used
 
 [ ] Standardize card sizes
 

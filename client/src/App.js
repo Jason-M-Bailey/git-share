@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
+import useToken from './components/App/useToken';
 
 // utils
 import API from "./utils/API";
@@ -20,7 +21,35 @@ import API from "./utils/API";
 // seed
 // import projectseed from "./seed/projectData.json";
 
+// function setToken(userToken) {
+//   sessionStorage.setItem('token', JSON.stringify(userToken));
+// }
+
+// function getToken() {
+//   const tokenString = sessionStorage.getItem('token');
+//   const userToken = JSON.parse(tokenString);
+//   return userToken?.token
+// }
+
 function App() {
+// user authentication
+  const { token, setToken } = useToken();
+
+  // // user authentication
+  // const token = getToken();
+
+  // Setting our component's initial state
+  const [projects, setProjects] = useState([]);
+
+  // Load all projects and store them with setProjects
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   // search github repos
   // const [projects, setProjects] = useState(projectseed);
   // const [repos, setRepos] = useState("");
@@ -40,13 +69,6 @@ function App() {
   //   });
   // };
 
-  // Setting our component's initial state
-  const [projects, setProjects] = useState([]);
-
-  // Load all projects and store them with setProjects
-  useEffect(() => {
-    loadProjects();
-  }, []);
 
   // Loads all projects and sets them to projects
   function loadProjects() {

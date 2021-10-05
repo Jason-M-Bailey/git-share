@@ -7,6 +7,15 @@ const app = express();
 //
 const path = require("path");
 
+// user authentication
+const cors = require('cors');
+
+app.use('/login', (req, res) => {
+  res.send({
+    token: 'test123'
+  });
+});
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
