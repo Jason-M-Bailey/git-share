@@ -10,7 +10,6 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import ProjectCard from "./components/ProjectCard/projectcard";
 import Register from "./components/Register";
-import AnotherGridLayout from "./components/Layout";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
@@ -49,7 +48,7 @@ function App() {
     loadProjects();
   }, []);
 
-  // Loads all books and sets them to books
+  // Loads all projects and sets them to projects
   function loadProjects() {
     API.getProjects()
       .then(res => 
@@ -79,11 +78,8 @@ function App() {
               <Register />
             </Route>
             <Route path="/project/:id">
-              {/* Ryan claims we need this to map through priorities on the ProjectId page */}
+              {/* we need this to map through priorities on the ProjectId page */}
               <ProjectId projects={projects}/>
-            </Route>
-            <Route exact path="/layout">
-              <AnotherGridLayout />
             </Route>
             <Route exact path="/add_new_project">
               <ProjectForm />
