@@ -79,7 +79,8 @@ function App() {
               <Register />
             </Route>
             <Route path="/project/:id">
-              <ProjectId />
+              {/* Ryan claims we need this to map through priorities on the ProjectId page */}
+              <ProjectId projects={projects}/>
             </Route>
             <Route exact path="/layout">
               <AnotherGridLayout />
