@@ -53,6 +53,7 @@
 }
 .postNote {
   margin-bottom: 30px;
+  transform: scale(0.8);
 }
 .postit {
   text-align: center;
