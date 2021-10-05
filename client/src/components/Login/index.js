@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
 
 import "./Login.css";
 
@@ -24,6 +25,12 @@ export default function Login({ setToken }) {
       password,
     });
     setToken(token);
+
+    Swal.fire({
+      icon: "success",
+      title: `Hello ${username}`,
+      text: "Successful login!",
+    });
   };
 
   return (
