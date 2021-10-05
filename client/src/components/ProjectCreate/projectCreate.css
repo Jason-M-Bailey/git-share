@@ -6,6 +6,14 @@
 .header .add-form {
   margin-left: 30px;
 }
+.form-control {
+  width: 100%;
+  height: 165px;
+}
+.text-area {
+  width: 100%;
+  height: 150px;
+}
 .input {
   width: 100%;
   height: 100px;
@@ -124,4 +132,7 @@
   word-wrap: break-word !important;
   max-width: 400px !important;
   height: auto;
+}
+.stick {
+  background-color: #070bff;
 }
