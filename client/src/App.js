@@ -47,9 +47,9 @@ function App() {
     loadProjects();
   }, []);
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  //if(!token) {
+  //  return <Login setToken={setToken} />
+  //}
 
   // search github repos
   // const [projects, setProjects] = useState(projectseed);
