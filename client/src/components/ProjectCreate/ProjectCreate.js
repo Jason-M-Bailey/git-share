@@ -14,6 +14,7 @@ function ProjectCreate() {
   const AddPost = ({ onSave }) => {
     const [text, setText] = useState("");
 
+    // is this necessary? we could make the cards much smaller if this is removed
     const day = Date().toLocaleString();
 
     const onSubmit = (e) => {
@@ -45,7 +46,11 @@ function ProjectCreate() {
           />
         </div>
 
-        <input type="submit" className="stick btn btn-block" value="Stick Postit" />
+        <input
+          type="submit"
+          className="stick btn btn-block"
+          value="Stick Postit"
+        />
       </form>
     );
   };
@@ -207,7 +212,7 @@ function ProjectCreate() {
       <>
         <div className="container-fluid">
           <div className="header-main">
-            <h1>Postit</h1>
+            {/* <h1>Postit</h1> */}
 
             <ShowForm
               showForm={() => setShowAddPost(!showAddPost)}

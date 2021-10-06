@@ -27,10 +27,10 @@
 }
 .btn-block {
   font-weight: 250 !important;
-  background-color: #fb4e4e !important;
+  background-color: #07ff83 !important;
   height: 50px;
-  color: #ffffff !important;
-  margin-bottom: 80px;
+  color: black !important;
+  margin-bottom: 30px;
   margin-top: 2px;
 }
 .textBold {
@@ -60,7 +60,7 @@
   margin-top: -5% !important;
 }
 .postNote {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   transform: scale(0.8);
 }
 .postit {
@@ -71,7 +71,7 @@
   margin-top: 10px !important;
 }
 .posts {
-  padding: 2em;
+  padding: 1em;
   background: #07ff83;
   position: relative;
   min-height: 8em;
@@ -79,6 +79,7 @@
   margin: 1em auto;
   font-family: helvetica;
   box-shadow: 2px 2px 5px rgba(21, 22, 22, 0.294);
+  /* border: 1px black solid; */
   margin-bottom: 30px !important;
   float: left;
   margin-right: 20px !important;
@@ -118,16 +119,19 @@
   margin: 20px;
 }
 .PostDate {
-  font-size: 15px;
-  padding-top: 25px;
+  font-size: 0.9em;
+  padding-top: 5px;
+  padding-bottom: 0px;
   margin-left: 10px;
-  text-decoration: solid underline #0da157 3px;
+  /* text-decoration: solid underline #0da157 3px; */
   word-wrap: break-word !important;
-  text-align: left !important;
+  text-align: left !important; 
+  color: rgb(104, 103, 104);
+  
 }
 .PostName {
   padding: 10px;
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: bold;
   word-wrap: break-word !important;
   max-width: 400px !important;

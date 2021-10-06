@@ -5,7 +5,7 @@ import React from "react";
 import {
   Nav,
   Navbar,
-  // NavDropdown,
+  NavDropdown,
   Container,
   // Form,
   // FormControl,
@@ -37,8 +37,7 @@ function NavbarApp(props) {
           </Nav> */}
 
           {/* todo: remove search button and use onSubmit to search --- or even better, return results as user begins to type */}
-          
-          
+
           {/* <Form className="d-flex">
             <FormControl
               name="repos"
@@ -53,7 +52,10 @@ function NavbarApp(props) {
               Search
             </Button>
           </Form> */}
-          <Nav>
+          <Nav className="justify-content-end" style={{ width: "100%" }}>
+            <Nav.Link eventKey={2} href="/planning">
+              Planning
+            </Nav.Link>
             <Nav.Link href="/add_new_project">Add New Project</Nav.Link>
 
             {/* if logged in display "Account", if not logged in "Login" */}
@@ -63,6 +65,12 @@ function NavbarApp(props) {
             <Nav.Link eventKey={2} href="/login">
               Login
             </Nav.Link>
+
+            <NavDropdown title="Account" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/account">My Projects</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

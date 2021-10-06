@@ -57,51 +57,56 @@ export default function Login({ setToken }) {
 }
 */
 
-
 import React, { useState } from "react";
 import Axios from "axios";
 import "./Login.css";
 import Swal from "sweetalert2";
-    
-    function Login() {
-      const [loginEmail, setLoginEmail] = useState("");
-      const [loginPassword, setLoginPassword] = useState("");
-    
-      const login = () => {
-        Axios.post("http://localhost:3001/api/users/login", {
-          username: loginEmail,
-          password: loginPassword,
-        }).then((res) => console.log(res));
-      };
-    
-      // this is only here so the app can continue to be tested
-      // we need a legit handleSubmit to test user info
-      const handleSubmit = async (e) => {
-        Swal.fire({
-          icon: "success",
-          title: `I only added this so the app can be tested`,
-          text: "gotta work on auth!!!",
-        });
-      };
-    
-      return (
+import { Wrapper } from "./Login.styles";
+
+function Login() {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const login = () => {
+    Axios.post("http://localhost:3001/api/users/login", {
+      username: loginEmail,
+      password: loginPassword,
+    }).then((res) => console.log(res));
+  };
+
+  // this is only here so the app can continue to be tested
+  // we need a legit handleSubmit to test user info
+  const handleSubmit = async (e) => {
+    Swal.fire({
+      icon: "success",
+      title: `I only added this so the app can be tested`,
+      text: "gotta work on auth!!!",
+    });
+  };
+
+  return (
+    <div>
+      <Wrapper>
         <div>
-          <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-              <input
-                placeholder="email"
-                onChange={(e) => setLoginEmail(e.target.value)}
-              />
-              <input
-                placeholder="password"
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-              <button onClick={login}>Submit</button>
-            </form>
-          </div>
+          <h1>Login</h1>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="email"
+              onChange={(e) => setLoginEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="password"
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
+            <button onClick={login}>Submit</button>
+          </form>
         </div>
-      );
-    }
-    
-    export default Login;
+      </Wrapper>
+    </div>
+  );
+}
+
+export default Login;

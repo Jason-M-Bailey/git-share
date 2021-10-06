@@ -4,6 +4,9 @@ const projectRoutes = require("./projects");
 // Project Routes
 router.use("/projects", projectRoutes);
 
+// Account Route
+// router.use("/account", accountRoutes);
+
 module.exports = function (passport) {
     const userRoutes = require("./users")(passport);
 

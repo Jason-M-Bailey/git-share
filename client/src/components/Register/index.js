@@ -49,6 +49,7 @@ export default function Register() {
 
 import React, { useState } from "react";
 import Axios from "axios";
+import { Wrapper } from "./Register.styles";
 
 function Register() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -68,18 +69,22 @@ function Register() {
   
   return (
     <div>
+      <Wrapper>
       <div>
         <h1>Register</h1>
         <input
+          type="email"
           placeholder="email"
           onChange={(e) => setRegisterEmail(e.target.value)}
         />
         <input
+          type="password"
           placeholder="password"
           onChange={(e) => setRegisterPassword(e.target.value)}
         />
         <button onClick={register}>Submit</button>
       </div>
+      </Wrapper>
     </div>
   );
 }
