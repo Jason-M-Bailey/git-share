@@ -99,10 +99,10 @@ function App() {
             <Route exact path="/register">
               <Register />
             </Route>
-            <Route path="/project/:id">
+            <Route path="/project/:id" component={ProjectId} />
               {/* we need this to map through priorities on the ProjectId page */}
-              <ProjectId projects={projects}/>
-            </Route>
+              {/* <ProjectId projects={projects}/> */}
+            {/* </Route> */}
             <Route exact path="/add_new_project">
               <ProjectForm />
             </Route>

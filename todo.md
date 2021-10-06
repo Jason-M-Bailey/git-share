@@ -20,7 +20,7 @@
 
 [ ] Must allow for or involve the authentication of users in some way
 
-[ ] Must protect API keys in Node with environment variables
+[✔️] Must protect API keys in Node with environment variables
 
 # New Tech
 [ ] Draggable components - Ryan

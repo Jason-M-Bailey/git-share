@@ -28,5 +28,10 @@ export default {
   // save project to database
   saveProject: function (projectData) {
     return axios.post("/api/projects/", projectData);
+  },
+
+  // delete project
+  editProjects: function (projectData) {
+    return axios.put("/api/projects", projectData);
   }
 };

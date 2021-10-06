@@ -9,7 +9,8 @@ const UserSchema = new Schema({
   github: { type: String },
   projects: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Project"
+    ref: "Project", 
+    require: "false"
   }]
 });
 
