@@ -16,19 +16,34 @@
 
 [✔️] Must meet good quality coding standards (indentation, scoping, naming)
 
-[ ] Must utilize at least 2 libraries, packages, or technologies that we haven't discussed
+[✔️] Must utilize at least 2 libraries, packages, or technologies that we haven't discussed
 
 [ ] Must allow for or involve the authentication of users in some way
 
 [✔️] Must protect API keys in Node with environment variables
 
-# New Tech
-[ ] Draggable components - Ryan
+# Ideal
 
-[ ] Github Auth? - Enrico & Ryan
+[ ] Route to ? after Register/Login
+
+[ ] Users have account page that displays current projects 
+
+[ ] Sticky only display on account page --- brainstorm!
+
+[ ] Project owner can delete project
+
+[ ] on project/:id page there is a input field for new priorities and submit button
+
+[ ] users add priorities on the add new project page (how does that push into an array?)
+
+[ ] users can add an image(s) to project
+
+# New Tech
+[✔️] Passport
 
 [✔️] Sweet Alert - https://www.npmjs.com/package/sweetalert
 
+[ ] Draggable components
 
 # Bonus
 
@@ -41,3 +56,5 @@
 [ ] Allow users to bookmark repos
 
 [ ] Infinite scroll (homepage refreshes itself as user scroll to bottom)
+
+[ ] Github Auth? - Enrico & Ryan
