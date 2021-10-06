@@ -18,19 +18,45 @@
 
 [✔️] Must utilize at least 2 libraries, packages, or technologies that we haven't discussed
 
-[ ] Must allow for or involve the authentication of users in some way
+[✔️] Must allow for or involve the authentication of users in some way
 
 [✔️] Must protect API keys in Node with environment variables
 
 # Ideal
 
-[ ] Route to ? after Register/Login
+[✔️] Confirm register account is correct
 
-[ ] Users have account page that displays current projects 
+[✔️] Redirect register to login (or can they be logged in right from register account process)
 
-[ ] Sticky only display on account page --- brainstorm!
+[✔️] Register: should email be hashed in console? It is hashed in mongoDB
 
-[ ] Project owner can delete project
+[✔️] Sweet Alert for new project added
+
+[✔️] Confirm login is correct
+
+[✔️] Redirect login to homepage
+
+[✔️] Account page has sticky postit notes section
+
+[ ] Redirect to homepage after successful project added
+
+[ ] Redirect logout to homepage 
+
+[ ] Account page for logged in users
+
+[ ] Account page displays current projects
+
+[ ] Account page - user can delete project
+
+[ ] Account page - user can edit project
+
+[ ] Account page - user can CRUD priorities
+
+[ ] Sweet Alert: Register: email already in database
+
+[ ] Sweet Alert: Login: alert when password is incorrect
+
+[ ] Sweet Alert: Login: alert when email is not in database
 
 [ ] on project/:id page there is a input field for new priorities and submit button
 
@@ -43,7 +69,7 @@
 
 [✔️] Sweet Alert - https://www.npmjs.com/package/sweetalert
 
-[ ] Draggable components
+[ ] Draggable components - need to have the new positions stored
 
 # Bonus
 

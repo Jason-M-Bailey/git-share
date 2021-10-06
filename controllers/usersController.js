@@ -58,5 +58,9 @@ module.exports = {
     },
     thisUser: function(req, res) {
         res.send(req.user);
+    },
+    logout: function(req, res) {
+        // THIS DOESN'T ACTUALLY REDIRECT, WHY?
+        res.redirect
     }
 };

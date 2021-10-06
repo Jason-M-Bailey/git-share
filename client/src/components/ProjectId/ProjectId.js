@@ -39,22 +39,25 @@ function ProjectId() {
     <section>
       <Wrapper>
         <div>
-          <h1>
+          <h3>
             {project.title} by: {project.github_username}
-          </h1>
-          <h4>
+          </h3>
+          <p>
             <a href={project.github_repo}>Visit Github Repo</a>
-          </h4>
-          <h5>{project.description}</h5>
-
+          </p>
+          <p>{project.description}</p>
+          <h3>Project Priorities</h3>
           {project.priorities?.map((property) => {
             return (
               <Draggable>
                 <Hover>
-                  <Card border="dark" style={{ width: "95%" }} clickable="true">
+                  <Card
+                    border="dark"
+                    // style={{ width: "18rem" }}
+                    clickable="true"
+                  >
                     <Card.Body>
-                      <Card.Header as="h5">{property}</Card.Header>
-                      <Card.Text>some text about the priority</Card.Text>
+                      <Card.Text>{property}</Card.Text>
                     </Card.Body>
                   </Card>
                 </Hover>

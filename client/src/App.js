@@ -14,6 +14,7 @@ import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
 import useToken from './components/App/useToken';
+import Account from "./components/Account";
 
 // utils
 import API from "./utils/API";
@@ -46,9 +47,9 @@ function App() {
     loadProjects();
   }, []);
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  //if(!token) {
+  //  return <Login setToken={setToken} />
+  //}
 
   // search github repos
   // const [projects, setProjects] = useState(projectseed);
@@ -109,6 +110,10 @@ function App() {
             <Route exact path="/planning">
               <ProjectCreate />
             </Route>
+            <Route exact path="/account">
+              <Account />
+              <ProjectCreate />
+              </Route>
           </Switch>
         </Router>
       </div>
