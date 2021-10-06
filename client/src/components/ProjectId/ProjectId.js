@@ -11,7 +11,7 @@ import { Wrapper, Hover } from "./ProjectId.styles";
 
 function ProjectId() {
   const [project, setProject] = useState({});
-  const [priorities, setPriorities] = useState([]);
+  // const [priorities, setPriorities] = useState([]);
 
   const { id } = useParams();
   // setPriorities(...project.priorities.concat(newPriority));
@@ -22,14 +22,14 @@ function ProjectId() {
       .catch((err) => console.error(err));
   };
 
-  const saveProjectHandler = (event) => {
-    event.preventDefault();
-    API.editProject({
-      priorities: priorities,
-    })
-      .then(() => alert("priority added"))
-      .catch((err) => console.log(err));
-  };
+  // const saveProjectHandler = (event) => {
+  //   event.preventDefault();
+  //   API.editProject({
+  //     priorities: priorities,
+  //   })
+  //     .then(() => alert("priority added"))
+  //     .catch((err) => console.log(err));
+  // };
 
   useEffect(() => {
     apiCall();
