@@ -11,13 +11,24 @@ import { Wrapper, Hover } from "./ProjectId.styles";
 
 function ProjectId() {
   const [project, setProject] = useState({});
+  const [priorities, setPriorities] = useState([]);
 
   const { id } = useParams();
+  // setPriorities(...project.priorities.concat(newPriority));
 
   const apiCall = async () => {
     await API.getProject(id)
       .then((res) => setProject(res.data))
       .catch((err) => console.error(err));
+  };
+
+  const saveProjectHandler = (event) => {
+    event.preventDefault();
+    API.editProject({
+      priorities: priorities,
+    })
+      .then(() => alert("priority added"))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -50,9 +61,15 @@ function ProjectId() {
               </Draggable>
             );
           })}
-
-
         </div>
+
+        {/* <form onSubmit={saveProjectHandler} className="inform">
+          <div>
+            <label className="title">Add a priority:</label>
+            <input required onSubmit={newPriority}></input>
+          </div>
+          <button type="submit"> Submit</button>
+        </form> */}
       </Wrapper>
     </section>
   );
