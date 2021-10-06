@@ -5,16 +5,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/git-share");
 
 const userSeed = [
   {
+    username: "joe",
     email: "joe@mail.com",
     password: "pass123",
     github_username: "jason-m-bailey",
   },
   {
+    username: "eric",
     email: "eric@mail.com",
     password: "pass123",
     github_username: "evperkinsjr",
   },
   {
+    username: "rob",
     email: "robert@mail.com",
     password: "pass123",
     github_username: "CrowdeRyan",

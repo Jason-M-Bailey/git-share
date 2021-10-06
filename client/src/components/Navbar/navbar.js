@@ -69,7 +69,7 @@ function NavbarApp(props) {
             <NavDropdown title="Account" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/account">My Projects</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="/api/users/logout">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
