@@ -24,6 +24,14 @@
 
 # Ideal
 
+[ ] Sweet Alert: Register: email already in database
+
+[ ] Register: should email be hashed in console? It is hashed in mongoDB
+
+[ ] Sweet Alert: Login: alert when password is incorrect
+
+[ ] Sweet Alert: Login: alert when email is not in database
+
 [ ] Route to ? after Register/Login
 
 [ ] Users have account page that displays current projects 
