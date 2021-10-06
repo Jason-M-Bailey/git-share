@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Register.css"
@@ -41,8 +41,47 @@ export default function Register() {
         </Button>
       </Form>
 
-      {/* //todo: how to incorporate the auth??? */}
+      
       <Button href="/auth/github">Login with Github</Button>
     </div>
   );
+} */
+
+import React, { useState } from "react";
+import Axios from "axios";
+
+function Register() {
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  
+  const register = () => {
+    Axios({
+      method: "POST",
+      data: {
+        email: registerEmail,
+        password: registerPassword,
+      },
+      withCredentials: true,
+      url: "http://localhost:3001/api/users/register",
+    }).then((res) => console.log(res));
+  };
+  
+  return (
+    <div>
+      <div>
+        <h1>Register</h1>
+        <input
+          placeholder="email"
+          onChange={(e) => setRegisterEmail(e.target.value)}
+        />
+        <input
+          placeholder="password"
+          onChange={(e) => setRegisterPassword(e.target.value)}
+        />
+        <button onClick={register}>Submit</button>
+      </div>
+    </div>
+  );
 }
+
+export default Register;
