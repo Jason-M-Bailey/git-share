@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const apiRoutes = require("./api");
 
-// API Routes
-router.use("/api", apiRoutes);
+module.exports = function (passport) {
+    const apiRoutes = require("./api")(passport);
 
-module.exports = router;
+    // API Routes
+    router.use("/api", apiRoutes);
+    return router;
+} 

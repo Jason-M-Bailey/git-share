@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 
@@ -58,7 +58,7 @@ export default function Login({ setToken }) {
 
 Login.propTypes = {
   setToken: PropTypes.func.isRequired,
-};
+}; */
 
 // import React, { useState } from "react";
 // import Form from "react-bootstrap/Form";
@@ -108,3 +108,42 @@ Login.propTypes = {
 //     </div>
 //   );
 // }
+
+
+import React, {useState} from "react";
+import Axios from "axios";
+
+function Login() {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  
+  const login = () => {
+    Axios.post("http://localhost:3001/api/users/login",{
+  
+      username: loginEmail,
+      password: loginPassword,
+      
+    }).then((res) => console.log(res));
+  };
+  
+  return (
+    <div>
+
+      <div>
+        <h1>Login</h1>
+        <input
+          placeholder="email"
+          onChange={(e) => setLoginEmail(e.target.value)}
+        />
+        <input
+          placeholder="password"
+          onChange={(e) => setLoginPassword(e.target.value)}
+        />
+        <button onClick={login}>Submit</button>
+      </div>
+
+    </div>
+  );
+}
+
+export default Login;

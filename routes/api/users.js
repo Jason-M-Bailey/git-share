@@ -11,4 +11,21 @@ router
     .route("/:id")
     .get(usersController.findById);
 
-module.exports = router;
+// Register
+router
+    .route("/register")
+    .post(usersController.findOne);
+
+// Get THIS authenticated user
+router
+    .route("/user")
+    .get(usersController.thisUser);
+
+module.exports = function (passport) {
+    // Login
+    router
+    .route("/login")
+    .post(passport.authenticate("local", {
+        failureRedirect: '/register',}), usersController.authenticate);
+    return router;
+} 
