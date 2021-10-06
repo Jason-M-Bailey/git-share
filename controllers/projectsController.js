@@ -27,11 +27,11 @@ module.exports = {
       //     { $addToSet: { project: _id } }
       //   )
       // )
-      .then(
-        res.status(201).send({
-          message: { content: "Project Posted" },
-        })
-      )
+      // .then(
+      //   res.status(201).send({
+      //     message: { content: "Project Posted" },
+      //   })
+      // )
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(400).json(err));
   },
