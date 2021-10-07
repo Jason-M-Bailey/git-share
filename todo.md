@@ -46,6 +46,8 @@
 
 [✔️] Style Login page
 
+[ ] Update README.md (description and usage doesn't match up with what we created)
+
 [ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
 
 [ ] Style Add New Project page
