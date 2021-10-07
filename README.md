@@ -21,9 +21,9 @@ As a user, I can link up with another user and help them achieve their goals for
 ## Technologies & Libraries Used:
 
 ```
+*Passport 
 *React-draggable
 *Sweet Alert
-*Passport
 
 Axios
 Bootstrap

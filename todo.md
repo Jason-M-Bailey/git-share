@@ -38,11 +38,21 @@
 
 [✔️] Account page has sticky postit notes section
 
+[✔️] Redirect logout to homepage 
+
+[✔️] Account page for logged in users
+
+[ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
+
+[ ] Style Register page
+
+[ ] Style Login page
+
+[ ] Style Add New Project page
+
+[ ] Display username on navbar (or elsewhere) to show we have a true logged in state
+
 [ ] Redirect to homepage after successful project added
-
-[ ] Redirect logout to homepage 
-
-[ ] Account page for logged in users
 
 [ ] Account page displays current projects
 
@@ -69,11 +79,9 @@
 
 [✔️] Sweet Alert - https://www.npmjs.com/package/sweetalert
 
-[ ] Draggable components - need to have the new positions stored
+[~] Draggable components - need to have the new positions stored
 
 # Bonus
-
-[ ] Import Github profile image --- this only works if github auth is used
 
 [ ] Standardize card sizes
 
@@ -83,4 +91,6 @@
 
 [ ] Infinite scroll (homepage refreshes itself as user scroll to bottom)
 
-[ ] Github Auth? - Enrico & Ryan
+[X] Github Auth?
+
+[X] Import Github profile image --- this only works if github auth is used

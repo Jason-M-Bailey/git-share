@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css";
 // import Swal from "sweetalert2";
 import { Wrapper } from "./Login.styles";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function Login() {
   const [loginUsername, setLoginUsername] = useState("");
@@ -34,22 +35,32 @@ function Login() {
     <div>
       <Wrapper>
         <div>
-          <h1>Login</h1>
-
-          <form onSubmit={handleSubmit}>
-            <input
-              type="username"
-              placeholder="username"
-              onChange={(e) => setLoginUsername(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="password"
-              onChange={(e) => setLoginPassword(e.target.value)}
-            />
-            <button onClick={login}>Submit</button>
-          </form>
+          <h1 className="mb-3">Login</h1>
+          <Form>
+            <form onSubmit={handleSubmit}>
+              <Form.Group>
+                <input
+                  className="mb-3"
+                  type="username"
+                  placeholder="username"
+                  onChange={(e) => setLoginUsername(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group>
+                <input
+                  className="mb-3"
+                  type="password"
+                  placeholder="password"
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Button variant="primary" onClick={login}>
+                Submit
+              </Button>
+            </form>
+          </Form>
         </div>
+        <h5 className="mt-3"><a href="/register">Click here to create an account first</a></h5>
       </Wrapper>
     </div>
   );

@@ -35,7 +35,7 @@ function ProjectCreate() {
 
     return (
       <form className="add-form" onSubmit={onSubmit}>
-        <div className="form-control">
+        <div className="sticky-form-control">
           <input
             className="text-area"
             type="text"
