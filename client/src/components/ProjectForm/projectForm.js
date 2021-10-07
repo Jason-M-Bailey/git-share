@@ -33,11 +33,14 @@ function ProjectForm() {
       github_repo: github_repo,
       description: description,
     })
-      .then(() => Swal.fire({
-        icon: "success",
-        title: "Project Added",
-        text: "Your project has been added!",
-      }))
+      .then(() =>
+        Swal.fire({
+          icon: "success",
+          title: "Project Added",
+          text: "Your project has been added!",
+          content: (window.location.href = "/"),
+        })
+      )
       .catch((err) => console.log(err));
   };
 

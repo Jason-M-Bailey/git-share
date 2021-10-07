@@ -12,6 +12,7 @@ function Account() {
 
       <Row xs={1} md={2} lg={3} xxl={4} className="g-4">
         <div classname="card">
+          {/* needs to pull created projects */}
           <Hover>
             <Card border="dark" style={{ width: "18rem" }} clickable="true">
               <Card.Body>
@@ -24,7 +25,6 @@ function Account() {
                 </Card.Text>
               </Card.Body>
             </Card>
-            
           </Hover>
         </div>
       </Row>
