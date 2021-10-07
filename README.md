@@ -21,11 +21,14 @@ As a user, I can link up with another user and help them achieve their goals for
 ## Technologies & Libraries Used:
 
 ```
+*React-draggable
+*Sweet Alert
+*Passport
+
 Axios
 Bootstrap
 Firebase
 React
-React-draggable
 Sass
 Uuid
 Mongoose
