@@ -5,10 +5,9 @@ const userRoutes = require("./users");
 // Project Routes
 router.use("/projects", projectRoutes);
 
-
 router.use("/users", userRoutes);
 
 // Account Route
 // router.use("/account", accountRoutes);
 
-module.exports = router
+module.exports = router;

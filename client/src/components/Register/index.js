@@ -20,7 +20,7 @@ function Register() {
     })
     .then((res) => {
       console.log(res)
-      window.location.href="/"
+      window.location.href="/login"
     });
 
   };

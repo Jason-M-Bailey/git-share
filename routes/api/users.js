@@ -3,12 +3,14 @@ const usersController = require("../../controllers/usersController");
 const passport = require("passport");
 const { User } = require("../../models");
 
+// Endpoint to get current user
 router.get("/currentuser", function (req, res) {
   console.log(req.user);
 
   res.json(req.user);
 });
 
+// Endpoint to logout
 router.get("/logout", function (req, res) {
   req.logout();
   res.send(null);
@@ -52,7 +54,6 @@ router.route("/").get(usersController.findAll).post(usersController.create);
 router.route("/:id").get(usersController.findById);
 
 // Register
-// router.route("/register").post(usersController.findOne);
 router.post("/register", function (req, res) {
   var newUser = new User(req.body);
 
@@ -67,9 +68,5 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
   console.log(req.user);
   res.send(req.user);
 });
-
-// Endpoint to get current user
-
-// Endpoint to logout
 
 module.exports = router;
