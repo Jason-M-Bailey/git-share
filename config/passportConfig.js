@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const localStrategy = require("passport-local").Strategy;
 
 module.exports = function (passport) {
-  console.log("does this work?")
+  console.log("does this work?");
   passport.use(
     new localStrategy((email, password, done) => {
       console.log("email:", email);

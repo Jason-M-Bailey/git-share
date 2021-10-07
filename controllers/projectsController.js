@@ -19,8 +19,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Project
-      .create(req.body)
+    db.Project.create(req.body)
       // .then(({ _id }) =>
       //   db.User.findOneAndUpdate(
       //     { _id: req.user_id },

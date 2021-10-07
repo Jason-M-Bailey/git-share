@@ -38,6 +38,8 @@
 
 [✔️] Account page has sticky postit notes section
 
+[ ] Display username on navbar to ensure we have a true logged in state
+
 [ ] Redirect to homepage after successful project added
 
 [ ] Redirect logout to homepage 

@@ -13,7 +13,7 @@ import Register from "./components/Register";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
-import useToken from './components/App/useToken';
+// import useToken from "./components/App/useToken";
 import Account from "./components/Account";
 
 // utils
@@ -33,8 +33,8 @@ import API from "./utils/API";
 // }
 
 function App() {
-// user authentication
-  const { token, setToken } = useToken();
+  // user authentication
+  // const { token, setToken } = useToken();
 
   // // user authentication
   // const token = getToken();
@@ -70,15 +70,12 @@ function App() {
   //   });
   // };
 
-
   // Loads all projects and sets them to projects
   function loadProjects() {
     API.getProjects()
-      .then(res => 
-        setProjects(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+      .then((res) => setProjects(res.data))
+      .catch((err) => console.log(err));
+  }
 
   // todo: clean this up so its merely Router, Switch, Route, Link
   return (
@@ -101,8 +98,8 @@ function App() {
               <Register />
             </Route>
             <Route path="/project/:id" component={ProjectId} />
-              {/* we need this to map through priorities on the ProjectId page */}
-              {/* <ProjectId projects={projects}/> */}
+            {/* we need this to map through priorities on the ProjectId page */}
+            {/* <ProjectId projects={projects}/> */}
             {/* </Route> */}
             <Route exact path="/add_new_project">
               <ProjectForm />
@@ -113,7 +110,7 @@ function App() {
             <Route exact path="/account">
               <Account />
               <ProjectCreate />
-              </Route>
+            </Route>
           </Switch>
         </Router>
       </div>

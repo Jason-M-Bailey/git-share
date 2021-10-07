@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Draggable from "react-draggable";
 
@@ -43,7 +43,7 @@ function ProjectId() {
             {project.title} by: {project.github_username}
           </h3>
           <p>
-            <a href={project.github_repo}>Visit Github Repo</a>
+            <a href={project.github_repo} target="_blank">Visit Github Repo</a>
           </p>
           <p>{project.description}</p>
           <h3>Project Priorities</h3>

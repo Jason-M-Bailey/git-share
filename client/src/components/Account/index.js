@@ -19,12 +19,9 @@ function Account() {
                 <Card.Title>Repo</Card.Title>
                 <Card.Text>Description</Card.Text>
                 <Card.Text></Card.Text>
-                <Card.Text>
-                  <a href="">Visit Github Repo</a>
-                </Card.Text>
+                <Card.Text>Visit Github Repo</Card.Text>
               </Card.Body>
             </Card>
-            
           </Hover>
         </div>
       </Row>

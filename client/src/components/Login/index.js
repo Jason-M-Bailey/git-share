@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { Wrapper } from "./Login.styles";
 
 function Login() {
@@ -13,15 +13,17 @@ function Login() {
     console.log({
       username: loginUsername,
       password: loginPassword,
-    })
-
-    axios.post("/api/users/login", {
-      username: loginUsername,
-      password: loginPassword,
-    }).then((res) => {
-      console.log(res)
-     window.location.href="/" 
     });
+
+    axios
+      .post("/api/users/login", {
+        username: loginUsername,
+        password: loginPassword,
+      })
+      .then((res) => {
+        console.log(res);
+        window.location.href = "/";
+      });
   };
 
   // this is only here so the app can continue to be tested
@@ -49,6 +51,10 @@ function Login() {
           </form>
         </div>
       </Wrapper>
+
+      <h3>
+        <a href="/register">Register New Account</a>
+      </h3>
     </div>
   );
 }

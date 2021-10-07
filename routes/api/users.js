@@ -57,10 +57,15 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
 });
 
 // Endpoint to logout
-router.get("/logout", function (req, res) {
+router.get('/logout', function(req, res){
   req.logout();
-
-  res.redirect("/login");
+  res.redirect('/');
 });
+
+// router.get("/logout", function (req, res) {
+//   req.logout();
+
+//   res.redirect("/login");
+// });
 
 module.exports = router;

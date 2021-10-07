@@ -53,23 +53,27 @@ function NavbarApp(props) {
             </Button>
           </Form> */}
           <Nav className="justify-content-end" style={{ width: "100%" }}>
-            <Nav.Link eventKey={2} href="/planning">
+            {/* <Nav.Link eventKey={2} href="/planning">
               Planning
             </Nav.Link>
-            <Nav.Link href="/add_new_project">Add New Project</Nav.Link>
+            <Nav.Link href="/add_new_project">Add New Project</Nav.Link> */}
 
             {/* if logged in display "Account", if not logged in "Login" */}
-            <Nav.Link eventKey={2} href="/register">
+            {/* <Nav.Link eventKey={2} href="/register">
               Register
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link eventKey={2} href="/login">
               Login
             </Nav.Link>
 
             <NavDropdown title="Account" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/account">My Projects</NavDropdown.Item>
+              <NavDropdown.Item href="/add_new_project">
+                Add A Project
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/planning">Notepad</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/api/users/logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="/api">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
