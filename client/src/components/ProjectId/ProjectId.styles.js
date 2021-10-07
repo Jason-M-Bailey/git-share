@@ -12,3 +12,4 @@ export const Hover = styled.div`
       0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
   }
 `;
+
