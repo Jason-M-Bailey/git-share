@@ -37,7 +37,7 @@ function Login() {
         <div>
           <h1 className="mb-3">Login</h1>
           <Form>
-            <form onSubmit={handleSubmit}>
+            <div onSubmit={handleSubmit}>
               <Form.Group>
                 <input
                   className="mb-3"
@@ -57,7 +57,7 @@ function Login() {
               <Button variant="primary" onClick={login}>
                 Submit
               </Button>
-            </form>
+            </div>
           </Form>
         </div>
         <h5 className="mt-3"><a href="/register">Click here to create an account first</a></h5>
