@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
   find: function (req, res) {
-    db.Project.find(req.query)
+    db.Project.find()
       .populate("project_owner", "name id")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(400).json(err));
@@ -19,8 +19,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Project
-      .create(req.body)
+    db.Project.create(req.body)
       // .then(({ _id }) =>
       //   db.User.findOneAndUpdate(
       //     { _id: req.user_id },

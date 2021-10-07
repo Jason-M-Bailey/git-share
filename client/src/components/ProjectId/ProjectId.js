@@ -43,7 +43,9 @@ function ProjectId() {
             {project.title} by: {project.github_username}
           </h3>
           <p>
-            <a href={project.github_repo}>Visit Github Repo</a>
+            <a href={project.github_repo} target="_blank" rel="noreferrer">
+              Visit Github Repo
+            </a>
           </p>
           <p>{project.description}</p>
           <h3>Project Priorities</h3>
