@@ -42,17 +42,25 @@
 
 [✔️] Account page for logged in users
 
+[✔️] Style Register page
+
+[✔️] Style Login page
+
 [ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
-
-[ ] Style Register page
-
-[ ] Style Login page
 
 [ ] Style Add New Project page
 
+[ ] Redirect to homepage after successful project added
+
 [ ] Display username on navbar (or elsewhere) to show we have a true logged in state
 
-[ ] Redirect to homepage after successful project added
+[ ] Make draggable items save their new order
+
+[ ] Sweet Alert: Register: email already in database
+
+[ ] Sweet Alert: Login: alert when password is incorrect
+
+[ ] Sweet Alert: Login: alert when email is not in database
 
 [ ] Account page displays current projects
 
@@ -62,13 +70,7 @@
 
 [ ] Account page - user can CRUD priorities
 
-[ ] Sweet Alert: Register: email already in database
-
-[ ] Sweet Alert: Login: alert when password is incorrect
-
-[ ] Sweet Alert: Login: alert when email is not in database
-
-[ ] on project/:id page there is a input field for new priorities and submit button
+[ ] on project/:id page add an input field for new priorities and submit button
 
 [ ] users add priorities on the add new project page (how does that push into an array?)
 
