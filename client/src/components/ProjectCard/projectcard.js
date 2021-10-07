@@ -15,7 +15,7 @@ function ProjectCard(props) {
         <Row xs={1} md={2} lg={3} xxl={4} className="g-4">
           {props.projects.map((project) => {
             return (
-              <div classname="card">
+              <div className="card">
                 <Link
                   to={"/project/" + project._id}
                   style={{ color: "inherit", textDecoration: "inherit" }}
