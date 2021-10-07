@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { Wrapper } from "./Login.styles";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -11,20 +11,35 @@ function Login() {
 
   const login = (event) => {
     event.preventDefault();
-    console.log({
-      username: loginUsername,
-      password: loginPassword,
-    });
-
-    axios
-      .post("/api/users/login", {
+    if (!loginUsername || !loginPassword) {
+      Swal.fire({
+        icon: "error",
+        title: "Please",
+        text: "Please Enter Information",
+      });
+    } else {
+      console.log({
         username: loginUsername,
         password: loginPassword,
-      })
-      .then((res) => {
-        console.log(res);
-        window.location.href = "/";
       });
+
+      axios
+        .post("/api/users/login", {
+          username: loginUsername,
+          password: loginPassword,
+        })
+        .then((res) => {
+          console.log(res);
+          window.location.href = "/";
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Please",
+            text: "Please Enter Correct Login",
+          });
+        });
+    }
   };
 
   // this is only here so the app can continue to be tested
@@ -60,7 +75,9 @@ function Login() {
             </form>
           </Form>
         </div>
-        <h5 className="mt-3"><a href="/register">Click here to create an account first</a></h5>
+        <h5 className="mt-3">
+          <a href="/register">Click here to create an account first</a>
+        </h5>
       </Wrapper>
     </div>
   );
