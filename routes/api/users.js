@@ -3,6 +3,17 @@ const usersController = require("../../controllers/usersController");
 const passport = require("passport");
 const { User } = require("../../models");
 
+router.get("/currentuser", function (req, res) {
+  console.log(req.user);
+
+  res.json(req.user);
+});
+
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.send(null);
+});
+
 var LocalStrategy = require("passport-local").Strategy;
 passport.use(
   new LocalStrategy(function (username, password, done) {
@@ -14,6 +25,7 @@ passport.use(
       User.comparePassword(password, user.password, function (err, isMatch) {
         if (err) throw err;
         if (isMatch) {
+          console.log(user);
           return done(null, user);
         } else {
           return done(null, false, { message: "Invalid password" });
@@ -56,11 +68,8 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
   res.send(req.user);
 });
 
-// Endpoint to logout
-router.get("/logout", function (req, res) {
-  req.logout();
+// Endpoint to get current user
 
-  res.redirect("/login");
-});
+// Endpoint to logout
 
 module.exports = router;
