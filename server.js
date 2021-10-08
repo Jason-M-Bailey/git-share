@@ -2,14 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
-
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-//
 const path = require("path");
 
 // Define middleware here

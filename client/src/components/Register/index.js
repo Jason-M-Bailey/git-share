@@ -3,6 +3,7 @@ import axios from "axios";
 import { Wrapper } from "./Register.styles";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Swal from "sweetalert2";
 
 function Register() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -10,11 +11,19 @@ function Register() {
   const [registerUsername, setRegisterUsername] = useState("");
 
   const register = () => {
-    console.log({
-      username: registerUsername,
-      email: registerEmail,
-      password: registerPassword,
-    });
+    if (!registerEmail || !registerPassword || !registerUsername) {
+      Swal.fire({
+        icon: "error",
+        title: "Please",
+        text: "Please Complete Form",
+      });
+    } else {
+      console.log({
+        username: registerUsername,
+        email: registerEmail,
+        password: registerPassword,
+      });
+    }
     axios
       .post("/api/users/register", {
         username: registerUsername,
