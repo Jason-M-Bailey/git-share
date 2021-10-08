@@ -16,13 +16,15 @@ function Login() {
       password: loginPassword,
     });
 
+    const user = { username: loginUsername, password: loginPassword}
+
     axios
-      .post("/api/users/login", {
-        username: loginUsername,
-        password: loginPassword,
-      })
+      .post("/api/users/login", user)
       .then((res) => {
-        console.log(res);
+        /* console.log("this is")
+        console.log(res.data);
+        console.log(JSON.stringify(res.data)) */
+        localStorage.setItem('gs-user', JSON.stringify(res.data));
         window.location.href = "/";
       });
   };
@@ -60,7 +62,7 @@ function Login() {
             </form>
           </Form>
         </div>
-        <h5 className="mt-3"><a href="/register">Click here to create an account first</a></h5>
+        <h5 className="mt-3">New user? <a href="/register">Create an account</a>.</h5>
       </Wrapper>
     </div>
   );
