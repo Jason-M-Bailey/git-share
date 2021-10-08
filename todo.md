@@ -46,9 +46,15 @@
 
 [✔️] Style Login page
 
+[✔️] Sweet Alerts: when empty fields
+
+[✔️] Style Add New Project page
+
 [✔️] Determine why Heroku is not accepting register and login routes
 
 [✔️] users add priorities on the add new project page (how does that push into an array?)
+
+[ ] Redirect to homepage after successful project added
 
 [ ] Connect logged in user to project added
 
@@ -58,11 +64,9 @@
 
 [ ] Make draggable items save their new order
 
-[ ] Sweet Alert: Register: email already in database
+[ ] Sweet Alert: Register: email already in database -- right now multiple users can register with the same email (same email, different username & password)
 
-[ ] Sweet Alert: Login: alert when password is incorrect
-
-[ ] Sweet Alert: Login: alert when email is not in database
+[ ] Sweet Alert: Login: alert when login and password do not match 
 
 [ ] Redirect to homepage after successful project added
 
