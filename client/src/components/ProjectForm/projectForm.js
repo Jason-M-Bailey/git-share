@@ -61,6 +61,7 @@ function ProjectForm() {
           icon: "success",
           title: "Project Added",
           text: "Your project has been added!",
+          content: (window.location.href = "/"),
         })
       )
       .catch((err) => console.log(err));
