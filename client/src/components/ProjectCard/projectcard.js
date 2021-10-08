@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// todo: is there a standard way to import these?
-import { Card } from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-
+import { Card, Row } from "react-bootstrap";
 import { Wrapper, Hover } from "./ProjectCard.styles";
 
 function ProjectCard(props) {
@@ -15,7 +11,7 @@ function ProjectCard(props) {
         <Row xs={1} md={2} lg={3} xxl={4} className="g-4">
           {props.projects.map((project) => {
             return (
-              <div classname="card">
+              <div className="card">
                 <Link
                   to={"/project/" + project._id}
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -30,15 +26,10 @@ function ProjectCard(props) {
                         <Card.Header as="h5">{project.title}</Card.Header>
                         <Card.Title>{project.repo}</Card.Title>
                         <Card.Text>{project.description}</Card.Text>
-                        {/* <Card.Text>{project.role_needed}</Card.Text> */}
                         <Card.Text></Card.Text>
                         <Card.Text>
                           <a href={project.github_repo}>Visit Github Repo</a>
                         </Card.Text>
-                        {/* <Card.Text className="text-muted">
-                          Comments: {project.comments} | Bookmarks:{" "}
-                          {project.bookmarks}
-                        </Card.Text> */}
 
                         <Card.Footer className="text-muted">
                           Project Created By: {project.github_username}

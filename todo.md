@@ -50,21 +50,29 @@
 
 [✔️] Style Add New Project page
 
-[ ] Determine why Heroku is not accepting register and login routes
+[✔️] Determine why Heroku is not accepting register and login routes
 
-[ ] Update README.md (description and usage doesn't match up with what we created)
-
-[ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
+[✔️] users add priorities on the add new project page (how does that push into an array?)
 
 [ ] Redirect to homepage after successful project added
 
-[ ] Display username on navbar (or elsewhere) to show we have a true logged in state
+[ ] Connect logged in user to project added
+
+[ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?" - Enrico
+
+[ ] Display username on navbar (or elsewhere) to show we have a true logged in state - Enrico
 
 [ ] Make draggable items save their new order
 
 [ ] Sweet Alert: Register: email already in database -- right now multiple users can register with the same email (same email, different username & password)
 
 [ ] Sweet Alert: Login: alert when login and password do not match 
+
+[ ] Redirect to homepage after successful project added
+
+[ ] Style Add New Project page
+
+[ ] Update README.md (description and usage doesn't match up with what we created)
 
 [ ] Account page displays current projects
 
@@ -75,8 +83,6 @@
 [ ] Account page - user can CRUD priorities
 
 [ ] on project/:id page add an input field for new priorities and submit button
-
-[ ] users add priorities on the add new project page (how does that push into an array?)
 
 [ ] users can add an image(s) to project
 

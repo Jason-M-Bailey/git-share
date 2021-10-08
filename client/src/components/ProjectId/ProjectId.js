@@ -2,19 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Draggable from "react-draggable";
-
-// need to update API
 import API from "../../utils/API";
-
-// styling
 import { Wrapper, Hover } from "./ProjectId.styles";
+
+// components
+// import Comments from "../Comments"
 
 function ProjectId() {
   const [project, setProject] = useState({});
-  // const [priorities, setPriorities] = useState([]);
-
   const { id } = useParams();
-  // setPriorities(...project.priorities.concat(newPriority));
 
   const apiCall = async () => {
     await API.getProject(id)
@@ -22,18 +18,22 @@ function ProjectId() {
       .catch((err) => console.error(err));
   };
 
-  // const saveProjectHandler = (event) => {
-  //   event.preventDefault();
-  //   API.editProject({
-  //     priorities: priorities,
-  //   })
-  //     .then(() => alert("priority added"))
-  //     .catch((err) => console.log(err));
-  // };
-
   useEffect(() => {
     apiCall();
+
+    // find and set location of each property
   }, []);
+
+  const handleStop = (e, data, property) => {
+    console.log("Event: ", e);
+    console.log("Data: ", data);
+
+    // on stop find and set this property location
+
+    // sort by y value, ascending
+
+    // save
+  };
 
   return (
     <section>
@@ -51,7 +51,11 @@ function ProjectId() {
           <h3>Project Priorities</h3>
           {project.priorities?.map((property) => {
             return (
-              <Draggable>
+              <Draggable
+                axis="y"
+                grid={[20, 20]}
+                onStop={(e, data) => handleStop(e, data, property)}
+              >
                 <Hover>
                   <Card
                     border="dark"
@@ -67,15 +71,9 @@ function ProjectId() {
             );
           })}
         </div>
-
-        {/* <form onSubmit={saveProjectHandler} className="inform">
-          <div>
-            <label className="title">Add a priority:</label>
-            <input required onSubmit={newPriority}></input>
-          </div>
-          <button type="submit"> Submit</button>
-        </form> */}
       </Wrapper>
+
+      {/* <Comments /> */}
     </section>
   );
 }
