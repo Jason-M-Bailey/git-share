@@ -46,13 +46,15 @@
 
 [✔️] Style Login page
 
+[✔️] Sweet Alerts: when empty fields
+
+[✔️] Style Add New Project page
+
 [ ] Determine why Heroku is not accepting register and login routes
 
 [ ] Update README.md (description and usage doesn't match up with what we created)
 
 [ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
-
-[ ] Style Add New Project page
 
 [ ] Redirect to homepage after successful project added
 
@@ -60,11 +62,9 @@
 
 [ ] Make draggable items save their new order
 
-[ ] Sweet Alert: Register: email already in database
+[ ] Sweet Alert: Register: email already in database -- right now multiple users can register with the same email (same email, different username & password)
 
-[ ] Sweet Alert: Login: alert when password is incorrect
-
-[ ] Sweet Alert: Login: alert when email is not in database
+[ ] Sweet Alert: Login: alert when login and password do not match 
 
 [ ] Account page displays current projects
 
