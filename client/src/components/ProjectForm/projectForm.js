@@ -10,14 +10,10 @@ function ProjectForm() {
   const [github_username, setGithub_Username] = useState([]);
   const [github_repo, setGithub_Repo] = useState([]);
   const [description, setDescription] = useState([]);
-
   const [priorities, setPriority] = useState([]);
   const [priorityFields, setPriorityFields] = useState([]);
 
-  // THURSDAY BREAKAGE
-  // const [project_owner, setProject_Owner] = useState([]);
-
-  // const item = useRef(null);
+  const item = useRef(null);
 
   const itemEls = useRef(new Array());
 
@@ -35,7 +31,6 @@ function ProjectForm() {
     setPriority(itemEls.current.map((item) => item.value));
   };
 
-
   const titleUpdate = (event) => {
     setTitle(event.target.value);
   };
@@ -50,17 +45,8 @@ function ProjectForm() {
   const descriptionUpdate = (event) => {
     setDescription(event.target.value);
   };
-
-  // THURSDAY BREAKAGE
-  /* useEffect(() => {
-    const loggedInUser = localStorage.getItem('gs-user');
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
-      setUser(foundUser);
-    }
-  }, []); */
-
-  // const loggedInUser = localStorage.getItem('gs-user');
+  
+  const loggedInUser = localStorage.getItem('gs-user');
 
   const saveProjectHandler = (event) => {
     event.preventDefault();
@@ -71,41 +57,25 @@ function ProjectForm() {
       console.log(foundUser._id);
       thisUser = foundUser._id;
       console.log(thisUser);
-      setProject_Owner(thisUser);
     }
     
 
-    // THURSDAY BREAKAGE
-    // let thisUser;
-    // if (loggedInUser) {
-    //   const foundUser = JSON.parse(loggedInUser);
-    //   console.log(foundUser.username);
-    //   console.log(foundUser._id);
-    //   thisUser = foundUser._id;
-    //   console.log(thisUser);
-    //   setProject_Owner(thisUser);
-    // }
-
-    API.saveProject({
+    API.saveProject(
+      {
       title: title,
       project_owner: thisUser || "",
       github_username: github_username,
       github_repo: github_repo,
       description: description,
-      priorities: priorities,
-
-      // THURSDAY BREAKAGE
-      // project_owner: thisUser || "",
-
+      priorities: priorities
     })
-      .then(() =>
+      .then(() => 
         Swal.fire({
           icon: "success",
           title: "Project Added",
           text: "Your project has been added!",
           content: (window.location.href = "/"),
-        })
-      )
+      }))
       .catch((err) => console.log(err));
   };
 
