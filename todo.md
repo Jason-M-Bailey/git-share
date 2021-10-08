@@ -54,17 +54,14 @@
 
 [✔️] users add priorities on the add new project page (how does that push into an array?)
 
-
-[✔️] Connect logged in user to project added
-
-[ ] Redirect to homepage after successful project added
-
-
 [✔️] Redirect to homepage after successful project added
 
 [✔️] Style Add New Project page
 
-[ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?" 
+
+[ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
+
+[ ] Display username on navbar (or elsewhere) to show we have a true logged in state
 
 [ ] Make draggable items save their new order
 
