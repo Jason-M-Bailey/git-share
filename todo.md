@@ -58,7 +58,6 @@
 
 [✔️] Style Add New Project page
 
-[ ] Connect logged in user to project added
 
 [ ] Change navbar for guests to only view Login --- once on login page there is a link for "do you need to register first?"
 

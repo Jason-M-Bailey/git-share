@@ -10,6 +10,7 @@ function ProjectForm() {
   const [github_username, setGithub_Username] = useState([]);
   const [github_repo, setGithub_Repo] = useState([]);
   const [description, setDescription] = useState([]);
+
   const [priorities, setPriority] = useState([]);
   const [priorityFields, setPriorityFields] = useState([]);
 
@@ -33,6 +34,7 @@ function ProjectForm() {
   const priorityUpdate = (event) => {
     setPriority(itemEls.current.map((item) => item.value));
   };
+
 
   const titleUpdate = (event) => {
     setTitle(event.target.value);
@@ -62,6 +64,16 @@ function ProjectForm() {
 
   const saveProjectHandler = (event) => {
     event.preventDefault();
+    let thisUser;
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      console.log(foundUser.username);
+      console.log(foundUser._id);
+      thisUser = foundUser._id;
+      console.log(thisUser);
+      setProject_Owner(thisUser);
+    }
+    
 
     // THURSDAY BREAKAGE
     // let thisUser;
@@ -76,6 +88,7 @@ function ProjectForm() {
 
     API.saveProject({
       title: title,
+      project_owner: thisUser || "",
       github_username: github_username,
       github_repo: github_repo,
       description: description,

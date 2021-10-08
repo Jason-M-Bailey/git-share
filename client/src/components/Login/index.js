@@ -12,6 +12,7 @@ function Login() {
   const login = (event) => {
     event.preventDefault();
 
+
     // THURSDAY BREAKAGE
     console.log({
       username: loginUsername,
@@ -30,7 +31,6 @@ function Login() {
         // window.location.href = "/";
     // ^^^ THURSDAY BREAKAGE
 
-
     if (!loginUsername || !loginPassword) {
       Swal.fire({
         icon: "error",
@@ -41,6 +41,7 @@ function Login() {
       console.log({
         username: loginUsername,
         password: loginPassword,
+
       });
 
       axios
@@ -95,6 +96,7 @@ function Login() {
             </form>
           </Form>
         </div>
+
         <h5 className="mt-3">
           <a href="/register">Click here to create an account first</a>
         </h5>

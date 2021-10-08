@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const ProjectSchema = new Schema({
   // id: { type: String, required: true },
   title: { type: String, required: true },
+
   // THURSDAY BREAKAGE project_owner was commented out
   // project_owner: {
   //   type: mongoose.Schema.Types.ObjectId,
