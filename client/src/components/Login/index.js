@@ -11,6 +11,23 @@ function Login() {
 
   const login = (event) => {
     event.preventDefault();
+
+    console.log({
+      username: loginUsername,
+      password: loginPassword,
+    });
+
+    const user = { username: loginUsername, password: loginPassword}
+
+    axios
+      .post("/api/users/login", user)
+      .then((res) => {
+        /* console.log("this is")
+        console.log(res.data);
+        console.log(JSON.stringify(res.data)) */
+        localStorage.setItem('gs-user', JSON.stringify(res.data));
+        window.location.href = "/";
+
     if (!loginUsername || !loginPassword) {
       Swal.fire({
         icon: "error",
@@ -21,6 +38,7 @@ function Login() {
       console.log({
         username: loginUsername,
         password: loginPassword,
+
       });
 
       axios
@@ -75,6 +93,7 @@ function Login() {
             </form>
           </Form>
         </div>
+
         <h5 className="mt-3">
           <a href="/register">Click here to create an account first</a>
         </h5>

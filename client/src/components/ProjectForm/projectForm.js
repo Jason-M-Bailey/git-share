@@ -10,6 +10,7 @@ function ProjectForm() {
   const [github_username, setGithub_Username] = useState([]);
   const [github_repo, setGithub_Repo] = useState([]);
   const [description, setDescription] = useState([]);
+
   const [priorities, setPriority] = useState([]);
   const [priorityFields, setPriorityFields] = useState([]);
 
@@ -31,6 +32,7 @@ function ProjectForm() {
     setPriority(itemEls.current.map((item) => item.value));
   };
 
+
   const titleUpdate = (event) => {
     setTitle(event.target.value);
   };
@@ -46,11 +48,34 @@ function ProjectForm() {
     setDescription(event.target.value);
   };
 
+  /* useEffect(() => {
+    const loggedInUser = localStorage.getItem('gs-user');
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []); */
+  
+  const loggedInUser = localStorage.getItem('gs-user');
+  
+
   const saveProjectHandler = (event) => {
     event.preventDefault();
+    let thisUser;
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      console.log(foundUser.username);
+      console.log(foundUser._id);
+      thisUser = foundUser._id;
+      console.log(thisUser);
+      setProject_Owner(thisUser);
+    }
+    
 
-    API.saveProject({
+    API.saveProject(
+      {
       title: title,
+      project_owner: thisUser || "",
       github_username: github_username,
       github_repo: github_repo,
       description: description,
