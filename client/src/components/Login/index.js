@@ -11,6 +11,26 @@ function Login() {
 
   const login = (event) => {
     event.preventDefault();
+
+    // THURSDAY BREAKAGE
+    console.log({
+      username: loginUsername,
+      password: loginPassword,
+    });
+
+    const user = { username: loginUsername, password: loginPassword}
+
+    // axios
+      // .post("/api/users/login", user)
+      // .then((res) => {
+        // console.log("this is")
+        // console.log(res.data);
+        // console.log(JSON.stringify(res.data))
+        // localStorage.setItem('gs-user', JSON.stringify(res.data));
+        // window.location.href = "/";
+    // ^^^ THURSDAY BREAKAGE
+
+
     if (!loginUsername || !loginPassword) {
       Swal.fire({
         icon: "error",

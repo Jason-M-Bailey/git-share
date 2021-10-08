@@ -13,7 +13,10 @@ function ProjectForm() {
   const [priorities, setPriority] = useState([]);
   const [priorityFields, setPriorityFields] = useState([]);
 
-  const item = useRef(null);
+  // THURSDAY BREAKAGE
+  // const [project_owner, setProject_Owner] = useState([]);
+
+  // const item = useRef(null);
 
   const itemEls = useRef(new Array());
 
@@ -46,8 +49,30 @@ function ProjectForm() {
     setDescription(event.target.value);
   };
 
+  // THURSDAY BREAKAGE
+  /* useEffect(() => {
+    const loggedInUser = localStorage.getItem('gs-user');
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []); */
+
+  // const loggedInUser = localStorage.getItem('gs-user');
+
   const saveProjectHandler = (event) => {
     event.preventDefault();
+
+    // THURSDAY BREAKAGE
+    // let thisUser;
+    // if (loggedInUser) {
+    //   const foundUser = JSON.parse(loggedInUser);
+    //   console.log(foundUser.username);
+    //   console.log(foundUser._id);
+    //   thisUser = foundUser._id;
+    //   console.log(thisUser);
+    //   setProject_Owner(thisUser);
+    // }
 
     API.saveProject({
       title: title,
@@ -55,6 +80,10 @@ function ProjectForm() {
       github_repo: github_repo,
       description: description,
       priorities: priorities,
+
+      // THURSDAY BREAKAGE
+      // project_owner: thisUser || "",
+
     })
       .then(() =>
         Swal.fire({
