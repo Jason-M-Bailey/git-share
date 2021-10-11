@@ -27,10 +27,6 @@ function ProjectCard(props) {
                         <Card.Title>{project.repo}</Card.Title>
                         <Card.Text>{project.description}</Card.Text>
                         <Card.Text></Card.Text>
-                        <Card.Text>
-                          <a href={project.github_repo}>Visit Github Repo</a>
-                        </Card.Text>
-
                         <Card.Footer className="text-muted">
                           Project Created By: {project.github_username}
                         </Card.Footer>

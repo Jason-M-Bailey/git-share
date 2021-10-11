@@ -13,34 +13,13 @@ import Register from "./components/Register";
 import ProjectCreate from "./components/ProjectCreate/ProjectCreate";
 import ProjectForm from "./components/ProjectForm/projectForm";
 import ProjectId from "./components/ProjectId/ProjectId";
-// import useToken from "./components/App/useToken";
 import Account from "./components/Account";
 import NavShow from "./components/NavShow/NavShow";
-// import Logout from "./components/Logout/logout";
 
 // utils
 import API from "./utils/API";
 
-// seed
-// import projectseed from "./seed/projectData.json";
-
-// function setToken(userToken) {
-//   sessionStorage.setItem('token', JSON.stringify(userToken));
-// }
-
-// function getToken() {
-//   const tokenString = sessionStorage.getItem('token');
-//   const userToken = JSON.parse(tokenString);
-//   return userToken?.token
-// }
-
 function App() {
-  // user authentication
-  // const { token, setToken } = useToken();
-
-  // // user authentication
-  // const token = getToken();
-
   // Setting our component's initial state
   const [projects, setProjects] = useState([]);
 
@@ -49,29 +28,6 @@ function App() {
     loadProjects();
   }, []);
 
-  //if(!token) {
-  //  return <Login setToken={setToken} />
-  //}
-
-  // search github repos
-  // const [projects, setProjects] = useState(projectseed);
-  // const [repos, setRepos] = useState("");
-  // const handleInputSearch = (e) => {
-  //   console.log(repos);
-  //   API.getGithubUser(repos).then((res) => {
-  //     console.log(res.data);
-  //     const newRepos = res.data.items.map((repo) => {
-  //       return {
-  //         name: repo.full_name,
-  //         github_repo: repo.html_url,
-  //         description: repo.description,
-  //         role_needed: repo.language,
-  //       };
-  //     });
-  //     setProjects(newRepos);
-  //   });
-  // };
-
   // Loads all projects and sets them to projects
   function loadProjects() {
     API.getProjects()
@@ -79,7 +35,6 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  // todo: clean this up so its merely Router, Switch, Route, Link
   return (
     <div className="App">
       <div>
@@ -96,9 +51,6 @@ function App() {
               <Register />
             </Route>
             <Route path="/project/:id" component={ProjectId} />
-            {/* we need this to map through priorities on the ProjectId page */}
-            {/* <ProjectId projects={projects}/> */}
-            {/* </Route> */}
             <Route exact path="/add_new_project">
               <ProjectForm />
             </Route>
@@ -109,9 +61,6 @@ function App() {
               <Account />
               <ProjectCreate />
             </Route>
-            {/* <Route exact path="/logout">
-              <Logout />
-            </Route> */}
           </Switch>
         </Router>
       </div>

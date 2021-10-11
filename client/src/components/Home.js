@@ -9,8 +9,6 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-
-      {/* //todo: why does this not render seed data? */}
       <ProjectCard />
     </div>
   );

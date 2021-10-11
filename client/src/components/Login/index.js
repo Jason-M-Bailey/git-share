@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
 
-
 function Login() {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -17,7 +16,7 @@ function Login() {
       password: loginPassword,
     });
 
-    const user = { username: loginUsername, password: loginPassword}
+    const user = { username: loginUsername, password: loginPassword };
 
     if (!loginUsername || !loginPassword) {
       Swal.fire({
@@ -30,7 +29,7 @@ function Login() {
     axios
       .post("/api/users/login", user)
       .then((res) => {
-        localStorage.setItem('gs-user', JSON.stringify(res.data));
+        localStorage.setItem("gs-user", JSON.stringify(res.data));
         window.location.href = "/";
       })
       .catch((err) => {
@@ -42,8 +41,6 @@ function Login() {
       });
   };
 
-  // this is only here so the app can continue to be tested
-  // we need a legit handleSubmit to test user info
   const handleSubmit = async (e) => {};
 
   return (
@@ -75,7 +72,9 @@ function Login() {
             </form>
           </Form>
         </div>
-        <h5 className="mt-3">New user? <a href="/register">Create an account</a>.</h5>
+        <h5 className="mt-3">
+          New user? <a href="/register">Create an account</a>.
+        </h5>
       </Wrapper>
     </div>
   );
