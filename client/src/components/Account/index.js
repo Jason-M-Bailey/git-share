@@ -6,8 +6,8 @@ function Account() {
   return (
     <div>
       <Wrapper>
-        <h1>Made it to the account page</h1>
-        <p>map through projects from this user</p>
+        {/* <h1>Made it to the account page</h1>
+        <p>map through projects from this user</p> */}
       </Wrapper>
 
       <Row xs={1} md={2} lg={3} xxl={4} className="g-4">

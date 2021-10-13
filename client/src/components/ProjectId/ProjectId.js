@@ -5,9 +5,6 @@ import Draggable from "react-draggable";
 import API from "../../utils/API";
 import { Wrapper, Hover } from "./ProjectId.styles";
 
-// components
-// import Comments from "../Comments"
-
 function ProjectId() {
   const [project, setProject] = useState({});
   const { id } = useParams();
@@ -21,7 +18,7 @@ function ProjectId() {
   useEffect(() => {
     apiCall();
 
-    // find and set location of each property
+    // find and set location of each priority
   }, []);
 
   const handleStop = (e, data, property) => {
@@ -59,7 +56,6 @@ function ProjectId() {
                 <Hover>
                   <Card
                     border="dark"
-                    // style={{ width: "18rem" }}
                     clickable="true"
                   >
                     <Card.Body>
